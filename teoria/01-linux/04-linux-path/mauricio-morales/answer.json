@@ -702,7 +702,7 @@
         },
         "bootprocessbios": {
             "quizQuestion": "What does the BIOS load?",
-            "quizAnswer": "bootloeader"
+            "quizAnswer": "bootloader"
         }
     },
     "AdvancedTextFu": {
@@ -716,7 +716,7 @@
         },
         "vimnavigation": {
             "quizQuestion": "What letter is used to move down?",
-            "quizAnswer": "k"
+            "quizAnswer": "j"
         },
         "viminsertingappendingtext": {
             "quizQuestion": "What key is use to insert text before the cursor?",
