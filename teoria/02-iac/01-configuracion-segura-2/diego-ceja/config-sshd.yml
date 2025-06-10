@@ -1,0 +1,31 @@
+---
+    - lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^#Port 22'
+        line: 'Port 22'
+
+    - lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^#PermitRootLogin'
+        line: 'PermitRootLogin no'
+
+    - lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^#PubkeyAuthentication'
+        line: 'PubkeyAuthentication yes'
+
+    - lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^#AuthorizedKeysFile'
+        line: 'AuthorizedKeysFile    .ssh/authorized_keys'
+
+    - lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^X11Forwarding'
+        line: 'X11Forwarding no'
+
+    - name: RESTART SSHD
+      service:
+        name: sshd
+        state: restarted
+
