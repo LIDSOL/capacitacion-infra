@@ -1,0 +1,19 @@
+Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+Starting unattended upgrades script
+Allowed origins are: origin=Debian,codename=bookworm-security,label=Debian-Security, origin=Debian,codename=bookworm,label=Debian, origin=Debian,codename=bookworm,label=Debian Updates
+Initial blacklist: 
+Initial whitelist (not strict): 
+Marking not allowed <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/lidsol.fi-b.unam.mx_debian_dists_bookworm-updates_main_i18n_Translation-en'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='' site='lidsol.fi-b.unam.mx' IndexType='Debian Translation Index' Size=398 ID:9> with -32768 pin
+Marking not allowed <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/lidsol.fi-b.unam.mx_debian_dists_bookworm-updates_main_binary-amd64_Packages'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='amd64' site='lidsol.fi-b.unam.mx' IndexType='Debian Package Index' Size=602 ID:8> with -32768 pin
+Applying pinning: PkgFilePin(id=9, priority=-32768)
+Applying pin -32768 to package_file: <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/lidsol.fi-b.unam.mx_debian_dists_bookworm-updates_main_i18n_Translation-en'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='' site='lidsol.fi-b.unam.mx' IndexType='Debian Translation Index' Size=398 ID:9>
+Applying pinning: PkgFilePin(id=8, priority=-32768)
+Applying pin -32768 to package_file: <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/lidsol.fi-b.unam.mx_debian_dists_bookworm-updates_main_binary-amd64_Packages'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='amd64' site='lidsol.fi-b.unam.mx' IndexType='Debian Package Index' Size=602 ID:8>
+Using (^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$) regexp to find kernel packages
+Using (^linux-.*-6\.1\.0\-34\-amd64$|^linux-.*-6\.1\.0\-34$|^kfreebsd-.*-6\.1\.0\-34\-amd64$|^kfreebsd-.*-6\.1\.0\-34$|^gnumach-.*-6\.1\.0\-34\-amd64$|^gnumach-.*-6\.1\.0\-34$|^.*-modules-6\.1\.0\-34\-amd64$|^.*-modules-6\.1\.0\-34$|^.*-kernel-6\.1\.0\-34\-amd64$|^.*-kernel-6\.1\.0\-34$|^linux-.*-6\.1\.0\-34\-amd64$|^linux-.*-6\.1\.0\-34$|^kfreebsd-.*-6\.1\.0\-34\-amd64$|^kfreebsd-.*-6\.1\.0\-34$|^gnumach-.*-6\.1\.0\-34\-amd64$|^gnumach-.*-6\.1\.0\-34$|^.*-modules-6\.1\.0\-34\-amd64$|^.*-modules-6\.1\.0\-34$|^.*-kernel-6\.1\.0\-34\-amd64$|^.*-kernel-6\.1\.0\-34$) regexp to find running kernel packages
+pkgs that look like they should be upgraded: 
+Fetched 0 B in 0s (0 B/s)                                                       
+fetch.run() result: 0
+Packages blacklist due to conffile prompts: []
+No packages found that can be upgraded unattended and no pending auto-removals
+The list of kept packages can't be calculated in dry-run mode.

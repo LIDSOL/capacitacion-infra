@@ -1,0 +1,508 @@
+Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+Starting unattended upgrades script
+Allowed origins are: origin=Debian,codename=bookworm-updates, origin=Debian,codename=bookworm-proposed-updates, origin=Debian,codename=bookworm,label=Debian, origin=Debian,codename=bookworm,label=Debian-Security, origin=Debian,codename=bookworm-security,label=Debian-Security
+Initial blacklist: 
+Initial whitelist (not strict): 
+Using (^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$) regexp to find kernel packages
+Using (^linux-.*-6\.1\.0\-34\-amd64$|^linux-.*-6\.1\.0\-34$|^kfreebsd-.*-6\.1\.0\-34\-amd64$|^kfreebsd-.*-6\.1\.0\-34$|^gnumach-.*-6\.1\.0\-34\-amd64$|^gnumach-.*-6\.1\.0\-34$|^.*-modules-6\.1\.0\-34\-amd64$|^.*-modules-6\.1\.0\-34$|^.*-kernel-6\.1\.0\-34\-amd64$|^.*-kernel-6\.1\.0\-34$|^linux-.*-6\.1\.0\-34\-amd64$|^linux-.*-6\.1\.0\-34$|^kfreebsd-.*-6\.1\.0\-34\-amd64$|^kfreebsd-.*-6\.1\.0\-34$|^gnumach-.*-6\.1\.0\-34\-amd64$|^gnumach-.*-6\.1\.0\-34$|^.*-modules-6\.1\.0\-34\-amd64$|^.*-modules-6\.1\.0\-34$|^.*-kernel-6\.1\.0\-34\-amd64$|^.*-kernel-6\.1\.0\-34$) regexp to find running kernel packages
+Checking: base-files ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: bash ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: busybox ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: cpp-12 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: debian-archive-keyring ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: distro-info-data ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: firefox-esr ([<Origin component:'main' archive:'stable-security' origin:'Debian' label:'Debian-Security' site:'security.debian.org' isTrusted:True>])
+Checking: gcc-12-base ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: gir1.2-nm-1.0 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: imagemagick ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: imagemagick-6-common ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: imagemagick-6.q16 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: initramfs-tools ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: initramfs-tools-core ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: krb5-locales ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libabsl20220623 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libatomic1 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libcap2 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libcap2-bin ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libgcc-s1 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libgfortran5 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libglib2.0-0 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libglib2.0-bin ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libglib2.0-data ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libgomp1 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libgssapi-krb5-2 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libk5crypto3 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libkrb5-3 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libkrb5support0 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libmagickcore-6.q16-6 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libmagickcore-6.q16-6-extra ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libmagickwand-6.q16-6 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libnm0 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libpoppler-cpp0v5 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libpoppler-glib8 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libpoppler126 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libpython3.11 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libpython3.11-minimal ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libpython3.11-stdlib ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libquadmath0 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libssl3 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: libstdc++6 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: linux-image-amd64 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: login ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: network-manager ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: openssh-client ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: openssh-server ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: openssh-sftp-server ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: openssl ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: passwd ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: poppler-utils ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: python3.11 ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: python3.11-minimal ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: qemu-guest-agent ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+Checking: wireless-regdb ([<Origin component:'main' archive:'stable' origin:'Debian' label:'Debian' site:'lidsol.fi-b.unam.mx' isTrusted:True>])
+pkgs that look like they should be upgraded: base-files
+bash
+busybox
+cpp-12
+debian-archive-keyring
+distro-info-data
+firefox-esr
+gcc-12-base
+gir1.2-nm-1.0
+imagemagick
+imagemagick-6-common
+imagemagick-6.q16
+initramfs-tools
+initramfs-tools-core
+krb5-locales
+libabsl20220623
+libatomic1
+libcap2
+libcap2-bin
+libgcc-s1
+libgfortran5
+libglib2.0-0
+libglib2.0-bin
+libglib2.0-data
+libgomp1
+libgssapi-krb5-2
+libk5crypto3
+libkrb5-3
+libkrb5support0
+libmagickcore-6.q16-6
+libmagickcore-6.q16-6-extra
+libmagickwand-6.q16-6
+libnm0
+libpoppler-cpp0v5
+libpoppler-glib8
+libpoppler126
+libpython3.11
+libpython3.11-minimal
+libpython3.11-stdlib
+libquadmath0
+libssl3
+libstdc++6
+linux-image-amd64
+login
+network-manager
+openssh-client
+openssh-server
+openssh-sftp-server
+openssl
+passwd
+poppler-utils
+python3.11
+python3.11-minimal
+qemu-guest-agent
+wireless-regdb
+Fetched 0 B in 0s (0 B/s)                                                       
+fetch.run() result: 0
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 70880 DestFile:'/var/cache/apt/archives/base-files_12.4+deb12u11_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/b/base-files/base-files_12.4%2bdeb12u11_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/base-files_12.4+deb12u11_amd64.deb)
+found pkg: base-files
+conffile line: /etc/debian_version 1f7ab5df0320ffcc67e290640c7ff4c3
+current md5: 1f7ab5df0320ffcc67e290640c7ff4c3
+conffile line: /etc/dpkg/origins/debian c47b6815f67ad1aeccb0d4529bd0b990
+current md5: c47b6815f67ad1aeccb0d4529bd0b990
+conffile line: /etc/host.conf 4eb63731c9f5e30903ac4fc07a7fe3d6
+current md5: 4eb63731c9f5e30903ac4fc07a7fe3d6
+conffile line: /etc/issue 349d61a0e072d678e3e94923f0c3ce0e
+current md5: 349d61a0e072d678e3e94923f0c3ce0e
+conffile line: /etc/issue.net 3ae9b9ff69a78d614864f1957778fecb
+current md5: 3ae9b9ff69a78d614864f1957778fecb
+conffile line: /etc/update-motd.d/10-uname 9e1b832b7b06f566156e7c9e0548247b
+current md5: 9e1b832b7b06f566156e7c9e0548247b
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1490512 DestFile:'/var/cache/apt/archives/bash_5.2.15-2+b8_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/b/bash/bash_5.2.15-2%2bb8_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/bash_5.2.15-2+b8_amd64.deb)
+found pkg: bash
+conffile line: /etc/bash.bashrc 89269e1298235f1b12b4c16e4065ad0d
+current md5: 89269e1298235f1b12b4c16e4065ad0d
+conffile line: /etc/skel/.bash_logout 22bfb8c1dd94b5f3813a2b25da67463f
+current md5: 22bfb8c1dd94b5f3813a2b25da67463f
+conffile line: /etc/skel/.bashrc ee35a240758f374832e809ae0ea4883a
+current md5: ee35a240758f374832e809ae0ea4883a
+conffile line: /etc/skel/.profile f4e81ade7d6f9fb342541152d08e7a97
+current md5: f4e81ade7d6f9fb342541152d08e7a97
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 615896 DestFile:'/var/cache/apt/archives/login_1%3a4.13+dfsg1-1+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/s/shadow/login_4.13%2bdfsg1-1%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/login_1%3a4.13+dfsg1-1+deb12u1_amd64.deb)
+found pkg: login
+conffile line: /etc/login.defs f43a7b1eb7e082f1d4e2cb8f8376e71b
+current md5: f43a7b1eb7e082f1d4e2cb8f8376e71b
+conffile line: /etc/pam.d/login 5afbc06eb5f71fef25170cf3c936a442
+current md5: 5afbc06eb5f71fef25170cf3c936a442
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 9767788 DestFile:'/var/cache/apt/archives/cpp-12_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/cpp-12_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/cpp-12_12.2.0-14+deb12u1_amd64.deb)
+found pkg: cpp-12
+No conffiles in deb /var/cache/apt/archives/cpp-12_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 144616 DestFile:'/var/cache/apt/archives/libquadmath0_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/libquadmath0_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libquadmath0_12.2.0-14+deb12u1_amd64.deb)
+found pkg: libquadmath0
+No conffiles in deb /var/cache/apt/archives/libquadmath0_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 115772 DestFile:'/var/cache/apt/archives/libgomp1_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/libgomp1_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libgomp1_12.2.0-14+deb12u1_amd64.deb)
+found pkg: libgomp1
+No conffiles in deb /var/cache/apt/archives/libgomp1_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 792696 DestFile:'/var/cache/apt/archives/libgfortran5_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/libgfortran5_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libgfortran5_12.2.0-14+deb12u1_amd64.deb)
+found pkg: libgfortran5
+No conffiles in deb /var/cache/apt/archives/libgfortran5_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 37596 DestFile:'/var/cache/apt/archives/gcc-12-base_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/gcc-12-base_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/gcc-12-base_12.2.0-14+deb12u1_amd64.deb)
+found pkg: gcc-12-base
+No conffiles in deb /var/cache/apt/archives/gcc-12-base_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 49856 DestFile:'/var/cache/apt/archives/libgcc-s1_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/libgcc-s1_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libgcc-s1_12.2.0-14+deb12u1_amd64.deb)
+found pkg: libgcc-s1
+No conffiles in deb /var/cache/apt/archives/libgcc-s1_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 9376 DestFile:'/var/cache/apt/archives/libatomic1_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/libatomic1_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libatomic1_12.2.0-14+deb12u1_amd64.deb)
+found pkg: libatomic1
+No conffiles in deb /var/cache/apt/archives/libatomic1_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 612604 DestFile:'/var/cache/apt/archives/libstdc++6_12.2.0-14+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/gcc-12/libstdc%2b%2b6_12.2.0-14%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libstdc++6_12.2.0-14+deb12u1_amd64.deb)
+found pkg: libstdc++6
+No conffiles in deb /var/cache/apt/archives/libstdc++6_12.2.0-14+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 166344 DestFile:'/var/cache/apt/archives/imagemagick-6-common_8%3a6.9.11.60+dfsg-1.6+deb12u3_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/imagemagick/imagemagick-6-common_6.9.11.60%2bdfsg-1.6%2bdeb12u3_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/imagemagick-6-common_8%3a6.9.11.60+dfsg-1.6+deb12u3_all.deb)
+found pkg: imagemagick-6-common
+conffile line: /etc/ImageMagick-6/coder.xml 2cd28d60bb45db29bba17f35dc58ccb9
+current md5: 2cd28d60bb45db29bba17f35dc58ccb9
+conffile line: /etc/ImageMagick-6/colors.xml 7a58fb76b799bf829c55eecd08db28c2
+current md5: 7a58fb76b799bf829c55eecd08db28c2
+conffile line: /etc/ImageMagick-6/delegates.xml 00f88a4ce8130b4dd764e8926289b26a
+current md5: 00f88a4ce8130b4dd764e8926289b26a
+conffile line: /etc/ImageMagick-6/log.xml 29c0a0702c3729fec215ce53438eb608
+current md5: 29c0a0702c3729fec215ce53438eb608
+conffile line: /etc/ImageMagick-6/magic.xml 04b219d820811a6cb1bc7af03b52b626
+current md5: 04b219d820811a6cb1bc7af03b52b626
+conffile line: /etc/ImageMagick-6/mime.xml a0c1c972c13db8986951e0016f5be31b
+current md5: a0c1c972c13db8986951e0016f5be31b
+conffile line: /etc/ImageMagick-6/policy.xml faed773d7bbcf639e2631a0f7cb5e6ce
+current md5: faed773d7bbcf639e2631a0f7cb5e6ce
+conffile line: /etc/ImageMagick-6/quantization-table.xml 948aa1faac66b697266eaa55e8a052e5
+current md5: 948aa1faac66b697266eaa55e8a052e5
+conffile line: /etc/ImageMagick-6/thresholds.xml 99375e73d2a9a3acca91bf1011d15656
+current md5: 99375e73d2a9a3acca91bf1011d15656
+conffile line: /etc/ImageMagick-6/type-apple.xml 94aac3cbd6fdb6ccf338e8e60c3a6fcc
+current md5: 94aac3cbd6fdb6ccf338e8e60c3a6fcc
+conffile line: /etc/ImageMagick-6/type-dejavu.xml 2914462b5aec3bf19f4f706c018e904f
+current md5: 2914462b5aec3bf19f4f706c018e904f
+conffile line: /etc/ImageMagick-6/type-ghostscript.xml 76f2f31af66d562422aa56095cf67284
+current md5: 76f2f31af66d562422aa56095cf67284
+conffile line: /etc/ImageMagick-6/type-urw-base35.xml 0cbc7447c3b14e3a26025cf0bec201f7
+current md5: 0cbc7447c3b14e3a26025cf0bec201f7
+conffile line: /etc/ImageMagick-6/type-windows.xml 3a8000b7f83d4108e7c3024c1bcc403c
+current md5: 3a8000b7f83d4108e7c3024c1bcc403c
+conffile line: /etc/ImageMagick-6/type.xml a355c73d6843b2bfb5b5d7bb9cf2a5de
+current md5: a355c73d6843b2bfb5b5d7bb9cf2a5de
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1788884 DestFile:'/var/cache/apt/archives/libmagickcore-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/imagemagick/libmagickcore-6.q16-6_6.9.11.60%2bdfsg-1.6%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libmagickcore-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb)
+found pkg: libmagickcore-6.q16-6
+No conffiles in deb /var/cache/apt/archives/libmagickcore-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 409552 DestFile:'/var/cache/apt/archives/libmagickwand-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/imagemagick/libmagickwand-6.q16-6_6.9.11.60%2bdfsg-1.6%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libmagickwand-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb)
+found pkg: libmagickwand-6.q16-6
+No conffiles in deb /var/cache/apt/archives/libmagickwand-6.q16-6_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 972056 DestFile:'/var/cache/apt/archives/passwd_1%3a4.13+dfsg1-1+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/s/shadow/passwd_4.13%2bdfsg1-1%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/passwd_1%3a4.13+dfsg1-1+deb12u1_amd64.deb)
+found pkg: passwd
+conffile line: /etc/default/useradd e03965d134c26725cbc51a57969da6c9
+current md5: e03965d134c26725cbc51a57969da6c9
+conffile line: /etc/pam.d/chfn 4d466e00a348ba426130664d795e8afa
+current md5: 4d466e00a348ba426130664d795e8afa
+conffile line: /etc/pam.d/chpasswd 9900720564cb4ee98b7da29e2d183cb2
+current md5: 9900720564cb4ee98b7da29e2d183cb2
+conffile line: /etc/pam.d/chsh a6e9b589e90009334ffd030d819290a6
+current md5: a6e9b589e90009334ffd030d819290a6
+conffile line: /etc/pam.d/newusers 1454e29bfa9f2a10836563e76936cea5
+current md5: 1454e29bfa9f2a10836563e76936cea5
+conffile line: /etc/pam.d/passwd eaf2ad85b5ccd06cceb19a3e75f40c63
+current md5: eaf2ad85b5ccd06cceb19a3e75f40c63
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 134696 DestFile:'/var/cache/apt/archives/libgssapi-krb5-2_1.20.1-2+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/k/krb5/libgssapi-krb5-2_1.20.1-2%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libgssapi-krb5-2_1.20.1-2+deb12u3_amd64.deb)
+found pkg: libgssapi-krb5-2
+No conffiles in deb /var/cache/apt/archives/libgssapi-krb5-2_1.20.1-2+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 331872 DestFile:'/var/cache/apt/archives/libkrb5-3_1.20.1-2+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/k/krb5/libkrb5-3_1.20.1-2%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libkrb5-3_1.20.1-2+deb12u3_amd64.deb)
+found pkg: libkrb5-3
+No conffiles in deb /var/cache/apt/archives/libkrb5-3_1.20.1-2+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 32800 DestFile:'/var/cache/apt/archives/libkrb5support0_1.20.1-2+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/k/krb5/libkrb5support0_1.20.1-2%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libkrb5support0_1.20.1-2+deb12u3_amd64.deb)
+found pkg: libkrb5support0
+No conffiles in deb /var/cache/apt/archives/libkrb5support0_1.20.1-2+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 78924 DestFile:'/var/cache/apt/archives/libk5crypto3_1.20.1-2+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/k/krb5/libk5crypto3_1.20.1-2%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libk5crypto3_1.20.1-2+deb12u3_amd64.deb)
+found pkg: libk5crypto3
+No conffiles in deb /var/cache/apt/archives/libk5crypto3_1.20.1-2+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 2025692 DestFile:'/var/cache/apt/archives/libssl3_3.0.16-1~deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/o/openssl/libssl3_3.0.16-1%7edeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libssl3_3.0.16-1~deb12u1_amd64.deb)
+found pkg: libssl3
+No conffiles in deb /var/cache/apt/archives/libssl3_3.0.16-1~deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 65840 DestFile:'/var/cache/apt/archives/openssh-sftp-server_1%3a9.2p1-2+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/o/openssh/openssh-sftp-server_9.2p1-2%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/openssh-sftp-server_1%3a9.2p1-2+deb12u6_amd64.deb)
+found pkg: openssh-sftp-server
+No conffiles in deb /var/cache/apt/archives/openssh-sftp-server_1%3a9.2p1-2+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 456712 DestFile:'/var/cache/apt/archives/openssh-server_1%3a9.2p1-2+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/o/openssh/openssh-server_9.2p1-2%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/openssh-server_1%3a9.2p1-2+deb12u6_amd64.deb)
+found pkg: openssh-server
+conffile line: /etc/default/ssh 500e3cf069fe9a7b9936108eb9d9c035
+current md5: 500e3cf069fe9a7b9936108eb9d9c035
+conffile line: /etc/init.d/ssh 3649a6fe8c18ad1d5245fd91737de507
+current md5: 3649a6fe8c18ad1d5245fd91737de507
+conffile line: /etc/pam.d/sshd 8b4c7a12b031424b2a9946881da59812
+current md5: 8b4c7a12b031424b2a9946881da59812
+conffile line: /etc/ssh/moduli 1f68f6ab5e45958e61ff32297ea1c3ec
+current md5: 1f68f6ab5e45958e61ff32297ea1c3ec
+conffile line: /etc/sv/ssh/.meta/installed d41d8cd98f00b204e9800998ecf8427e
+current md5: d41d8cd98f00b204e9800998ecf8427e
+conffile line: /etc/sv/ssh/finish f5f032f6f3e569c821346294d410b636
+current md5: f5f032f6f3e569c821346294d410b636
+conffile line: /etc/sv/ssh/log/run 63e0ec3e1080dafc68d6d71d42b150a9
+current md5: 63e0ec3e1080dafc68d6d71d42b150a9
+conffile line: /etc/sv/ssh/run 411f69ac55d12f0c98998552846b1c78
+current md5: 411f69ac55d12f0c98998552846b1c78
+conffile line: /etc/ufw/applications.d/openssh-server 486b78d54b93cc9fdc950c1d52ff479e
+current md5: 486b78d54b93cc9fdc950c1d52ff479e
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 991948 DestFile:'/var/cache/apt/archives/openssh-client_1%3a9.2p1-2+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/o/openssh/openssh-client_9.2p1-2%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/openssh-client_1%3a9.2p1-2+deb12u6_amd64.deb)
+found pkg: openssh-client
+conffile line: /etc/ssh/ssh_config 8a5bddc82befb71d8ef34cc903d3d077
+current md5: 87835f1e9e9bb9f1ab126588ddb7fc21
+pkg_md5sum: 8a5bddc82befb71d8ef34cc903d3d077
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1986824 DestFile:'/var/cache/apt/archives/libpython3.11_3.11.2-6+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/python3.11/libpython3.11_3.11.2-6%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libpython3.11_3.11.2-6+deb12u6_amd64.deb)
+found pkg: libpython3.11
+No conffiles in deb /var/cache/apt/archives/libpython3.11_3.11.2-6+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 573328 DestFile:'/var/cache/apt/archives/python3.11_3.11.2-6+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/python3.11/python3.11_3.11.2-6%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/python3.11_3.11.2-6+deb12u6_amd64.deb)
+found pkg: python3.11
+No conffiles in deb /var/cache/apt/archives/python3.11_3.11.2-6+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1798500 DestFile:'/var/cache/apt/archives/libpython3.11-stdlib_3.11.2-6+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/python3.11/libpython3.11-stdlib_3.11.2-6%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libpython3.11-stdlib_3.11.2-6+deb12u6_amd64.deb)
+found pkg: libpython3.11-stdlib
+No conffiles in deb /var/cache/apt/archives/libpython3.11-stdlib_3.11.2-6+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 2064052 DestFile:'/var/cache/apt/archives/python3.11-minimal_3.11.2-6+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/python3.11/python3.11-minimal_3.11.2-6%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/python3.11-minimal_3.11.2-6+deb12u6_amd64.deb)
+found pkg: python3.11-minimal
+No conffiles in deb /var/cache/apt/archives/python3.11-minimal_3.11.2-6+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 816940 DestFile:'/var/cache/apt/archives/libpython3.11-minimal_3.11.2-6+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/python3.11/libpython3.11-minimal_3.11.2-6%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libpython3.11-minimal_3.11.2-6+deb12u6_amd64.deb)
+found pkg: libpython3.11-minimal
+conffile line: /etc/python3.11/sitecustomize.py d6b276695157bde06a56ba1b2bc53670
+current md5: d6b276695157bde06a56ba1b2bc53670
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1209764 DestFile:'/var/cache/apt/archives/libglib2.0-data_2.74.6-2+deb12u6_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/glib2.0/libglib2.0-data_2.74.6-2%2bdeb12u6_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libglib2.0-data_2.74.6-2+deb12u6_all.deb)
+found pkg: libglib2.0-data
+No conffiles in deb /var/cache/apt/archives/libglib2.0-data_2.74.6-2+deb12u6_all.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 110608 DestFile:'/var/cache/apt/archives/libglib2.0-bin_2.74.6-2+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/glib2.0/libglib2.0-bin_2.74.6-2%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libglib2.0-bin_2.74.6-2+deb12u6_amd64.deb)
+found pkg: libglib2.0-bin
+No conffiles in deb /var/cache/apt/archives/libglib2.0-bin_2.74.6-2+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1400280 DestFile:'/var/cache/apt/archives/libglib2.0-0_2.74.6-2+deb12u6_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/g/glib2.0/libglib2.0-0_2.74.6-2%2bdeb12u6_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libglib2.0-0_2.74.6-2+deb12u6_amd64.deb)
+found pkg: libglib2.0-0
+No conffiles in deb /var/cache/apt/archives/libglib2.0-0_2.74.6-2+deb12u6_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 342128 DestFile:'/var/cache/apt/archives/qemu-guest-agent_1%3a7.2+dfsg-7+deb12u13_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/q/qemu/qemu-guest-agent_7.2%2bdfsg-7%2bdeb12u13_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/qemu-guest-agent_1%3a7.2+dfsg-7+deb12u13_amd64.deb)
+found pkg: qemu-guest-agent
+conffile line: /etc/init.d/qemu-guest-agent f61a64ac1e48993023018fd1cff85191
+current md5: f61a64ac1e48993023018fd1cff85191
+conffile line: /etc/qemu/fsfreeze-hook 15f6ff42cbc5550a07ee21c2a471d905
+current md5: 15f6ff42cbc5550a07ee21c2a471d905
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 178572 DestFile:'/var/cache/apt/archives/debian-archive-keyring_2023.3+deb12u2_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3%2bdeb12u2_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/debian-archive-keyring_2023.3+deb12u2_all.deb)
+found pkg: debian-archive-keyring
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-bookworm-automatic.asc 55eec060916a9d4a0db7560ab4d7bdce
+current md5: 55eec060916a9d4a0db7560ab4d7bdce
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-bookworm-security-automatic.asc bec0a1224f667bcd1e231b874db9bc4f
+current md5: bec0a1224f667bcd1e231b874db9bc4f
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-bookworm-stable.asc fac2ec9faba2c2d82c70a6e2805c5b79
+current md5: fac2ec9faba2c2d82c70a6e2805c5b79
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-bullseye-automatic.asc 1f30ce1ba8532d523017acb1a69c106a
+current md5: 1f30ce1ba8532d523017acb1a69c106a
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-bullseye-security-automatic.asc 9fbe7b0d8ebb38e240aeec6b0830ac7b
+current md5: 9fbe7b0d8ebb38e240aeec6b0830ac7b
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-bullseye-stable.asc 85a4c0e5c747a38509b33562d4c950be
+current md5: 85a4c0e5c747a38509b33562d4c950be
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-buster-automatic.asc 10178cd8ac882d2d436857bd0f0bf5ad
+/etc/apt/trusted.gpg.d/debian-archive-buster-automatic.asc not in package conffiles {'/etc/apt/trusted.gpg.d/debian-archive-trixie-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-trixie-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-trixie-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-automatic.asc'}
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-buster-security-automatic.asc 8b60b0a24ecff63128cffbb055451931
+/etc/apt/trusted.gpg.d/debian-archive-buster-security-automatic.asc not in package conffiles {'/etc/apt/trusted.gpg.d/debian-archive-trixie-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-trixie-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-trixie-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-automatic.asc'}
+conffile line: /etc/apt/trusted.gpg.d/debian-archive-buster-stable.asc 49a2e1a5cc1922728aea81e00604f9d8
+/etc/apt/trusted.gpg.d/debian-archive-buster-stable.asc not in package conffiles {'/etc/apt/trusted.gpg.d/debian-archive-trixie-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-stable.asc', '/etc/apt/trusted.gpg.d/debian-archive-trixie-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bookworm-security-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-trixie-automatic.asc', '/etc/apt/trusted.gpg.d/debian-archive-bullseye-automatic.asc'}
+conffile /etc/apt/trusted.gpg.d/debian-archive-trixie-stable.asc in missing on the system
+conffile /etc/apt/trusted.gpg.d/debian-archive-trixie-security-automatic.asc in missing on the system
+conffile /etc/apt/trusted.gpg.d/debian-archive-trixie-automatic.asc in missing on the system
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 27204 DestFile:'/var/cache/apt/archives/libcap2_1%3a2.66-4+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/libc/libcap2/libcap2_2.66-4%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libcap2_1%3a2.66-4+deb12u1_amd64.deb)
+found pkg: libcap2
+No conffiles in deb /var/cache/apt/archives/libcap2_1%3a2.66-4+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 63064 DestFile:'/var/cache/apt/archives/krb5-locales_1.20.1-2+deb12u3_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/k/krb5/krb5-locales_1.20.1-2%2bdeb12u3_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/krb5-locales_1.20.1-2+deb12u3_all.deb)
+found pkg: krb5-locales
+No conffiles in deb /var/cache/apt/archives/krb5-locales_1.20.1-2+deb12u3_all.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 48268 DestFile:'/var/cache/apt/archives/initramfs-tools-core_0.142+deb12u3_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/initramfs-tools/initramfs-tools-core_0.142%2bdeb12u3_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/initramfs-tools-core_0.142+deb12u3_all.deb)
+found pkg: initramfs-tools-core
+conffile line: /etc/initramfs-tools/initramfs.conf 7cd32817dcb81991da2e2a928a32fdb0
+current md5: 7cd32817dcb81991da2e2a928a32fdb0
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 16028 DestFile:'/var/cache/apt/archives/initramfs-tools_0.142+deb12u3_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/initramfs-tools/initramfs-tools_0.142%2bdeb12u3_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/initramfs-tools_0.142+deb12u3_all.deb)
+found pkg: initramfs-tools
+conffile line: /etc/initramfs-tools/update-initramfs.conf e2026d4603e7161efaccca519aeb1297
+current md5: e2026d4603e7161efaccca519aeb1297
+conffile line: /etc/kernel/postinst.d/initramfs-tools c1cb0e052a2cdeef4f3257585c83c58d
+current md5: c1cb0e052a2cdeef4f3257585c83c58d
+conffile line: /etc/kernel/postrm.d/initramfs-tools e7471d253a5b24e2fd85b40be4e43218
+current md5: e7471d253a5b24e2fd85b40be4e43218
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 451860 DestFile:'/var/cache/apt/archives/busybox_1%3a1.35.0-4+b4_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/b/busybox/busybox_1.35.0-4%2bb4_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/busybox_1%3a1.35.0-4+b4_amd64.deb)
+found pkg: busybox
+No conffiles in deb /var/cache/apt/archives/busybox_1%3a1.35.0-4+b4_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 6360 DestFile:'/var/cache/apt/archives/distro-info-data_0.58+deb12u4_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/d/distro-info-data/distro-info-data_0.58%2bdeb12u4_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/distro-info-data_0.58+deb12u4_all.deb)
+found pkg: distro-info-data
+No conffiles in deb /var/cache/apt/archives/distro-info-data_0.58+deb12u4_all.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 69787280 DestFile:'/var/cache/apt/archives/firefox-esr_128.10.1esr-1~deb12u1_amd64.deb' DescURI: 'http://security.debian.org/debian-security/pool/updates/main/f/firefox-esr/firefox-esr_128.10.1esr-1%7edeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/firefox-esr_128.10.1esr-1~deb12u1_amd64.deb)
+found pkg: firefox-esr
+conffile line: /etc/firefox-esr/firefox-esr.js cebd145f0dd82696213e50218ff1a1bf
+current md5: cebd145f0dd82696213e50218ff1a1bf
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 3141860 DestFile:'/var/cache/apt/archives/network-manager_1.42.4-1+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/n/network-manager/network-manager_1.42.4-1%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/network-manager_1.42.4-1+deb12u1_amd64.deb)
+found pkg: network-manager
+conffile line: /etc/NetworkManager/NetworkManager.conf 914f22205f2ed4d4bc84f3682ecd3153
+current md5: 914f22205f2ed4d4bc84f3682ecd3153
+conffile line: /etc/NetworkManager/dispatcher.d/01-ifupdown e6de81aa6aa1f472937fd99db343914f
+current md5: e6de81aa6aa1f472937fd99db343914f
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 435756 DestFile:'/var/cache/apt/archives/libnm0_1.42.4-1+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/n/network-manager/libnm0_1.42.4-1%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libnm0_1.42.4-1+deb12u1_amd64.deb)
+found pkg: libnm0
+No conffiles in deb /var/cache/apt/archives/libnm0_1.42.4-1+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 77340 DestFile:'/var/cache/apt/archives/gir1.2-nm-1.0_1.42.4-1+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/n/network-manager/gir1.2-nm-1.0_1.42.4-1%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/gir1.2-nm-1.0_1.42.4-1+deb12u1_amd64.deb)
+found pkg: gir1.2-nm-1.0
+No conffiles in deb /var/cache/apt/archives/gir1.2-nm-1.0_1.42.4-1+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 339356 DestFile:'/var/cache/apt/archives/imagemagick-6.q16_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/imagemagick/imagemagick-6.q16_6.9.11.60%2bdfsg-1.6%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/imagemagick-6.q16_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb)
+found pkg: imagemagick-6.q16
+No conffiles in deb /var/cache/apt/archives/imagemagick-6.q16_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 122532 DestFile:'/var/cache/apt/archives/imagemagick_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/imagemagick/imagemagick_6.9.11.60%2bdfsg-1.6%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/imagemagick_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb)
+found pkg: imagemagick
+No conffiles in deb /var/cache/apt/archives/imagemagick_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 390704 DestFile:'/var/cache/apt/archives/libabsl20220623_20220623.1-1+deb12u2_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/a/abseil/libabsl20220623_20220623.1-1%2bdeb12u2_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libabsl20220623_20220623.1-1+deb12u2_amd64.deb)
+found pkg: libabsl20220623
+No conffiles in deb /var/cache/apt/archives/libabsl20220623_20220623.1-1+deb12u2_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 34820 DestFile:'/var/cache/apt/archives/libcap2-bin_1%3a2.66-4+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/libc/libcap2/libcap2-bin_2.66-4%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libcap2-bin_1%3a2.66-4+deb12u1_amd64.deb)
+found pkg: libcap2-bin
+No conffiles in deb /var/cache/apt/archives/libcap2-bin_1%3a2.66-4+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 172868 DestFile:'/var/cache/apt/archives/libmagickcore-6.q16-6-extra_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/i/imagemagick/libmagickcore-6.q16-6-extra_6.9.11.60%2bdfsg-1.6%2bdeb12u3_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libmagickcore-6.q16-6-extra_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb)
+found pkg: libmagickcore-6.q16-6-extra
+No conffiles in deb /var/cache/apt/archives/libmagickcore-6.q16-6-extra_8%3a6.9.11.60+dfsg-1.6+deb12u3_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 191468 DestFile:'/var/cache/apt/archives/poppler-utils_22.12.0-2+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/poppler/poppler-utils_22.12.0-2%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/poppler-utils_22.12.0-2+deb12u1_amd64.deb)
+found pkg: poppler-utils
+No conffiles in deb /var/cache/apt/archives/poppler-utils_22.12.0-2+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 132520 DestFile:'/var/cache/apt/archives/libpoppler-glib8_22.12.0-2+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/poppler/libpoppler-glib8_22.12.0-2%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libpoppler-glib8_22.12.0-2+deb12u1_amd64.deb)
+found pkg: libpoppler-glib8
+No conffiles in deb /var/cache/apt/archives/libpoppler-glib8_22.12.0-2+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 41700 DestFile:'/var/cache/apt/archives/libpoppler-cpp0v5_22.12.0-2+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/poppler/libpoppler-cpp0v5_22.12.0-2%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libpoppler-cpp0v5_22.12.0-2+deb12u1_amd64.deb)
+found pkg: libpoppler-cpp0v5
+No conffiles in deb /var/cache/apt/archives/libpoppler-cpp0v5_22.12.0-2+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1853416 DestFile:'/var/cache/apt/archives/libpoppler126_22.12.0-2+deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/p/poppler/libpoppler126_22.12.0-2%2bdeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/libpoppler126_22.12.0-2+deb12u1_amd64.deb)
+found pkg: libpoppler126
+No conffiles in deb /var/cache/apt/archives/libpoppler126_22.12.0-2+deb12u1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 69072264 DestFile:'/var/cache/apt/archives/linux-image-6.1.0-35-amd64_6.1.137-1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/l/linux-signed-amd64/linux-image-6.1.0-35-amd64_6.1.137-1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/linux-image-6.1.0-35-amd64_6.1.137-1_amd64.deb)
+No conffiles in deb /var/cache/apt/archives/linux-image-6.1.0-35-amd64_6.1.137-1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1476 DestFile:'/var/cache/apt/archives/linux-image-amd64_6.1.137-1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/l/linux-signed-amd64/linux-image-amd64_6.1.137-1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/linux-image-amd64_6.1.137-1_amd64.deb)
+found pkg: linux-image-amd64
+No conffiles in deb /var/cache/apt/archives/linux-image-amd64_6.1.137-1_amd64.deb (There is no member named 'conffiles')
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 1426796 DestFile:'/var/cache/apt/archives/openssl_3.0.16-1~deb12u1_amd64.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/o/openssl/openssl_3.0.16-1%7edeb12u1_amd64.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/openssl_3.0.16-1~deb12u1_amd64.deb)
+found pkg: openssl
+conffile line: /etc/ssl/openssl.cnf fe1993ec22f6b8a46cb9706acd8fc68f
+current md5: fe1993ec22f6b8a46cb9706acd8fc68f
+<apt_pkg.AcquireItem object:Status: 2 Complete: 1 Local: 1 IsTrusted: 1 FileSize: 11696 DestFile:'/var/cache/apt/archives/wireless-regdb_2025.02.20-1~deb12u1_all.deb' DescURI: 'http://lidsol.fi-b.unam.mx/debian/pool/main/w/wireless-regdb/wireless-regdb_2025.02.20-1%7edeb12u1_all.deb' ID:0 ErrorText: ''>
+check_conffile_prompt(/var/cache/apt/archives/wireless-regdb_2025.02.20-1~deb12u1_all.deb)
+found pkg: wireless-regdb
+No conffiles in deb /var/cache/apt/archives/wireless-regdb_2025.02.20-1~deb12u1_all.deb (There is no member named 'conffiles')
+Packages blacklist due to conffile prompts: []
+Option --dry-run given, *not* performing real actions
+Packages that will be upgraded: base-files bash busybox cpp-12 debian-archive-keyring distro-info-data firefox-esr gcc-12-base gir1.2-nm-1.0 imagemagick imagemagick-6-common imagemagick-6.q16 initramfs-tools initramfs-tools-core krb5-locales libabsl20220623 libatomic1 libcap2 libcap2-bin libgcc-s1 libgfortran5 libglib2.0-0 libglib2.0-bin libglib2.0-data libgomp1 libgssapi-krb5-2 libk5crypto3 libkrb5-3 libkrb5support0 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6 libnm0 libpoppler-cpp0v5 libpoppler-glib8 libpoppler126 libpython3.11 libpython3.11-minimal libpython3.11-stdlib libquadmath0 libssl3 libstdc++6 linux-image-amd64 login network-manager openssh-client openssh-server openssh-sftp-server openssl passwd poppler-utils python3.11 python3.11-minimal qemu-guest-agent wireless-regdb
+Writing dpkg log to /var/log/unattended-upgrades/unattended-upgrades-dpkg.log
+applying set ['login', 'passwd']
+left to upgrade {'bash', 'libpython3.11', 'gcc-12-base', 'libmagickcore-6.q16-6-extra', 'libstdc++6', 'imagemagick-6-common', 'libcap2', 'initramfs-tools', 'distro-info-data', 'libglib2.0-bin', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'libpoppler-cpp0v5', 'libkrb5-3', 'libabsl20220623', 'imagemagick-6.q16', 'libpoppler-glib8', 'network-manager', 'libgcc-s1', 'libnm0', 'libpython3.11-stdlib', 'libquadmath0', 'libpython3.11-minimal', 'openssh-client', 'imagemagick', 'libpoppler126', 'openssh-sftp-server', 'cpp-12', 'libglib2.0-0', 'libmagickcore-6.q16-6', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'libatomic1', 'libmagickwand-6.q16-6', 'base-files', 'libcap2-bin', 'libglib2.0-data', 'busybox', 'python3.11-minimal', 'libgomp1', 'firefox-esr', 'openssl', 'poppler-utils', 'initramfs-tools-core', 'wireless-regdb', 'libkrb5support0', 'libgssapi-krb5-2', 'python3.11', 'libssl3', 'libgfortran5'}
+applying set ['bash']
+left to upgrade {'libpython3.11', 'gcc-12-base', 'libmagickcore-6.q16-6-extra', 'libstdc++6', 'imagemagick-6-common', 'libcap2', 'initramfs-tools', 'distro-info-data', 'libglib2.0-bin', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'libpoppler-cpp0v5', 'libkrb5-3', 'libabsl20220623', 'imagemagick-6.q16', 'libpoppler-glib8', 'network-manager', 'libgcc-s1', 'libnm0', 'libpython3.11-stdlib', 'libquadmath0', 'libpython3.11-minimal', 'openssh-client', 'imagemagick', 'libpoppler126', 'openssh-sftp-server', 'cpp-12', 'libglib2.0-0', 'libmagickcore-6.q16-6', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'libatomic1', 'libmagickwand-6.q16-6', 'base-files', 'libcap2-bin', 'libglib2.0-data', 'busybox', 'python3.11-minimal', 'libgomp1', 'firefox-esr', 'openssl', 'poppler-utils', 'initramfs-tools-core', 'wireless-regdb', 'libkrb5support0', 'libgssapi-krb5-2', 'python3.11', 'libssl3', 'libgfortran5'}
+applying set ['python3.11', 'libpython3.11-minimal', 'libpython3.11', 'libpython3.11-stdlib', 'python3.11-minimal']
+left to upgrade {'gcc-12-base', 'libmagickcore-6.q16-6-extra', 'libstdc++6', 'imagemagick-6-common', 'libcap2', 'initramfs-tools', 'distro-info-data', 'libglib2.0-bin', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'libpoppler-cpp0v5', 'libkrb5-3', 'libabsl20220623', 'imagemagick-6.q16', 'libpoppler-glib8', 'network-manager', 'libgcc-s1', 'libnm0', 'libquadmath0', 'openssh-client', 'imagemagick', 'libpoppler126', 'openssh-sftp-server', 'cpp-12', 'libglib2.0-0', 'libmagickcore-6.q16-6', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'libatomic1', 'libmagickwand-6.q16-6', 'base-files', 'libcap2-bin', 'libglib2.0-data', 'busybox', 'libgomp1', 'firefox-esr', 'openssl', 'poppler-utils', 'initramfs-tools-core', 'wireless-regdb', 'libkrb5support0', 'libgssapi-krb5-2', 'libssl3', 'libgfortran5'}
+applying set ['libgomp1', 'libgfortran5', 'cpp-12', 'libquadmath0', 'gcc-12-base', 'libstdc++6', 'libatomic1', 'libgcc-s1']
+left to upgrade {'libmagickcore-6.q16-6-extra', 'imagemagick-6-common', 'libcap2', 'initramfs-tools', 'distro-info-data', 'libglib2.0-bin', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'libpoppler-cpp0v5', 'libkrb5-3', 'libabsl20220623', 'imagemagick-6.q16', 'libpoppler-glib8', 'network-manager', 'libnm0', 'openssh-client', 'imagemagick', 'libpoppler126', 'openssh-sftp-server', 'libglib2.0-0', 'libmagickcore-6.q16-6', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'libmagickwand-6.q16-6', 'base-files', 'libcap2-bin', 'libglib2.0-data', 'busybox', 'firefox-esr', 'openssl', 'poppler-utils', 'initramfs-tools-core', 'wireless-regdb', 'libkrb5support0', 'libgssapi-krb5-2', 'libssl3'}
+applying set ['imagemagick', 'libmagickcore-6.q16-6-extra', 'libmagickwand-6.q16-6', 'imagemagick-6.q16', 'libmagickcore-6.q16-6', 'imagemagick-6-common']
+left to upgrade {'libcap2', 'initramfs-tools', 'distro-info-data', 'libglib2.0-bin', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'libpoppler-cpp0v5', 'libkrb5-3', 'libabsl20220623', 'libpoppler-glib8', 'network-manager', 'libnm0', 'openssh-client', 'libpoppler126', 'openssh-sftp-server', 'libglib2.0-0', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'base-files', 'libcap2-bin', 'libglib2.0-data', 'busybox', 'firefox-esr', 'openssl', 'poppler-utils', 'initramfs-tools-core', 'wireless-regdb', 'libkrb5support0', 'libgssapi-krb5-2', 'libssl3'}
+applying set ['libcap2-bin', 'libcap2']
+left to upgrade {'initramfs-tools', 'distro-info-data', 'libglib2.0-bin', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'libpoppler-cpp0v5', 'libkrb5-3', 'libabsl20220623', 'libpoppler-glib8', 'network-manager', 'libnm0', 'openssh-client', 'libpoppler126', 'openssh-sftp-server', 'libglib2.0-0', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'base-files', 'libglib2.0-data', 'busybox', 'firefox-esr', 'openssl', 'poppler-utils', 'initramfs-tools-core', 'wireless-regdb', 'libkrb5support0', 'libgssapi-krb5-2', 'libssl3'}
+applying set ['initramfs-tools-core', 'initramfs-tools']
+left to upgrade {'libpoppler126', 'openssh-sftp-server', 'libglib2.0-0', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'distro-info-data', 'libglib2.0-bin', 'openssh-server', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'base-files', 'libglib2.0-data', 'busybox', 'openssh-client', 'libpoppler-cpp0v5', 'firefox-esr', 'openssl', 'poppler-utils', 'libkrb5-3', 'wireless-regdb', 'libkrb5support0', 'libabsl20220623', 'libgssapi-krb5-2', 'libpoppler-glib8', 'network-manager', 'libssl3', 'libnm0'}
+applying set ['distro-info-data']
+left to upgrade {'libnm0', 'libpoppler126', 'openssh-sftp-server', 'libglib2.0-0', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'libglib2.0-bin', 'openssh-server', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'base-files', 'libglib2.0-data', 'busybox', 'libpoppler-cpp0v5', 'firefox-esr', 'openssl', 'poppler-utils', 'libkrb5-3', 'wireless-regdb', 'libkrb5support0', 'libabsl20220623', 'libgssapi-krb5-2', 'libpoppler-glib8', 'network-manager', 'libssl3', 'openssh-client'}
+applying set ['libglib2.0-bin', 'libglib2.0-data', 'libglib2.0-0']
+left to upgrade {'libpoppler126', 'openssh-sftp-server', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'linux-image-amd64', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'base-files', 'busybox', 'openssh-client', 'libpoppler-cpp0v5', 'firefox-esr', 'openssl', 'poppler-utils', 'libkrb5-3', 'wireless-regdb', 'libkrb5support0', 'libabsl20220623', 'libgssapi-krb5-2', 'libpoppler-glib8', 'network-manager', 'libssl3', 'libnm0'}
+applying set ['linux-image-6.1.0-35-amd64', 'linux-image-amd64']
+left to upgrade {'libnm0', 'libpoppler126', 'openssh-sftp-server', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'libk5crypto3', 'qemu-guest-agent', 'krb5-locales', 'base-files', 'busybox', 'libpoppler-cpp0v5', 'firefox-esr', 'openssl', 'poppler-utils', 'libkrb5-3', 'wireless-regdb', 'libkrb5support0', 'libabsl20220623', 'libgssapi-krb5-2', 'libpoppler-glib8', 'network-manager', 'libssl3', 'openssh-client'}
+applying set ['krb5-locales', 'libgssapi-krb5-2', 'libkrb5support0', 'libkrb5-3', 'libk5crypto3']
+left to upgrade {'libpoppler126', 'openssh-sftp-server', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'qemu-guest-agent', 'base-files', 'busybox', 'openssh-client', 'libpoppler-cpp0v5', 'firefox-esr', 'openssl', 'poppler-utils', 'wireless-regdb', 'libabsl20220623', 'libpoppler-glib8', 'network-manager', 'libssl3', 'libnm0'}
+applying set ['qemu-guest-agent']
+left to upgrade {'libnm0', 'libpoppler126', 'openssh-sftp-server', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'base-files', 'busybox', 'libpoppler-cpp0v5', 'firefox-esr', 'openssl', 'poppler-utils', 'wireless-regdb', 'libabsl20220623', 'libpoppler-glib8', 'network-manager', 'libssl3', 'openssh-client'}
+applying set ['libpoppler-cpp0v5', 'poppler-utils', 'libpoppler-glib8', 'libpoppler126']
+left to upgrade {'base-files', 'busybox', 'openssh-client', 'openssh-sftp-server', 'firefox-esr', 'openssl', 'wireless-regdb', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'libabsl20220623', 'openssh-server', 'network-manager', 'libssl3', 'libnm0'}
+applying set ['libabsl20220623']
+left to upgrade {'base-files', 'busybox', 'openssh-client', 'openssh-sftp-server', 'firefox-esr', 'openssl', 'wireless-regdb', 'gir1.2-nm-1.0', 'debian-archive-keyring', 'openssh-server', 'network-manager', 'libssl3', 'libnm0'}
+applying set ['gir1.2-nm-1.0', 'network-manager', 'libnm0']
+left to upgrade {'base-files', 'busybox', 'openssh-sftp-server', 'firefox-esr', 'openssl', 'wireless-regdb', 'debian-archive-keyring', 'openssh-server', 'libssl3', 'openssh-client'}
+applying set ['openssh-client', 'openssh-server', 'libssl3', 'openssh-sftp-server', 'openssl']
+Preconfiguring packages ...
+Preconfiguring packages ...
+left to upgrade {'base-files', 'busybox', 'firefox-esr', 'wireless-regdb', 'debian-archive-keyring'}
+applying set ['debian-archive-keyring']
+left to upgrade {'base-files', 'firefox-esr', 'wireless-regdb', 'busybox'}
+applying set ['base-files']
+left to upgrade {'wireless-regdb', 'firefox-esr', 'busybox'}
+applying set ['busybox']
+left to upgrade {'wireless-regdb', 'firefox-esr'}
+applying set ['firefox-esr']
+left to upgrade {'wireless-regdb'}
+applying set ['wireless-regdb']
+left to upgrade set()
+All upgrades installed
+InstCount=0 DelCount=0 BrokenCount=0
+The list of kept packages can't be calculated in dry-run mode.

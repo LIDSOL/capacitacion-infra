@@ -1,0 +1,60 @@
+name: Check Linux Path Answers
+
+on:
+  pull_request:
+    paths:
+      - 'teoria/01-linux/04-linux-path/*/answer.json'
+
+jobs:
+  check-answers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Git
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git
+
+      - name: Prepare environment
+        run: |
+          cd teoria/01-linux/04-linux-path
+          git clone https://github.com/daquino94/linux-path.git --depth 1
+
+      - name: Check answers in pull request
+        run: |
+          cd teoria/01-linux/04-linux-path
+
+          # Find all answer.json files in subdirectories
+          ANSWER_FILES=$(find ~+ -type f -name 'answer.json')
+
+          if [ -z "$ANSWER_FILES" ]; then
+            echo "::error::No answer.json files found in the pull request!"
+            exit 1
+          fi
+
+          FINAL_EXIT_CODE=0
+
+          for ANSWER_FILE in $ANSWER_FILES; do
+            echo "Checking answers in $ANSWER_FILE"
+
+            python3 check-answer.py --answer-file "$ANSWER_FILE"
+
+            EXIT_CODE=$?
+
+            if [ $EXIT_CODE -ne 0 ]; then
+              echo "::error::Some answers in $ANSWER_FILE are incorrect!"
+              FINAL_EXIT_CODE=$EXIT_CODE
+            fi
+          done
+
+          exit $FINAL_EXIT_CODE
+
