@@ -1,0 +1,22 @@
+Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+Iniciando guión de actualizaciones desatendidas
+Fuentes permitidas: origin=Debian,codename=bookworm,label=Debian, origin=Debian,codename=bookworm,label=Debian-Security, origin=Debian,codename=bookworm-security,label=Debian-Security
+Initial blacklist: 
+Initial whitelist (not strict): 
+Marking not allowed <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/download.opensuse.org_repositories_home:_clayrisser:_bookworm_Debian%5f12_Packages'  a=,c=,v=,o=obs://build.opensuse.org/home:clayrisser:bookworm/Debian_12,l=home:clayrisser:bookworm arch='' site='download.opensuse.org' IndexType='Debian Package Index' Size=2416 ID:11> with -32768 pin
+Marking not allowed <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm-updates_main_i18n_Translation-en'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='' site='deb.debian.org' IndexType='Debian Translation Index' Size=398 ID:10> with -32768 pin
+Marking not allowed <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm-updates_main_binary-amd64_Packages'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='amd64' site='deb.debian.org' IndexType='Debian Package Index' Size=602 ID:9> with -32768 pin
+Applying pinning: PkgFilePin(id=11, priority=-32768)
+Applying pin -32768 to package_file: <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/download.opensuse.org_repositories_home:_clayrisser:_bookworm_Debian%5f12_Packages'  a=,c=,v=,o=obs://build.opensuse.org/home:clayrisser:bookworm/Debian_12,l=home:clayrisser:bookworm arch='' site='download.opensuse.org' IndexType='Debian Package Index' Size=2416 ID:11>
+Applying pinning: PkgFilePin(id=10, priority=-32768)
+Applying pin -32768 to package_file: <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm-updates_main_i18n_Translation-en'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='' site='deb.debian.org' IndexType='Debian Translation Index' Size=398 ID:10>
+Applying pinning: PkgFilePin(id=9, priority=-32768)
+Applying pin -32768 to package_file: <apt_pkg.PackageFile object: filename:'/var/lib/apt/lists/deb.debian.org_debian_dists_bookworm-updates_main_binary-amd64_Packages'  a=stable-updates,c=main,v=12-updates,o=Debian,l=Debian arch='amd64' site='deb.debian.org' IndexType='Debian Package Index' Size=602 ID:9>
+Using (^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$) regexp to find kernel packages
+Using (^linux-.*-6\.1\.0\-37\-amd64$|^linux-.*-6\.1\.0\-37$|^kfreebsd-.*-6\.1\.0\-37\-amd64$|^kfreebsd-.*-6\.1\.0\-37$|^gnumach-.*-6\.1\.0\-37\-amd64$|^gnumach-.*-6\.1\.0\-37$|^.*-modules-6\.1\.0\-37\-amd64$|^.*-modules-6\.1\.0\-37$|^.*-kernel-6\.1\.0\-37\-amd64$|^.*-kernel-6\.1\.0\-37$|^linux-.*-6\.1\.0\-37\-amd64$|^linux-.*-6\.1\.0\-37$|^kfreebsd-.*-6\.1\.0\-37\-amd64$|^kfreebsd-.*-6\.1\.0\-37$|^gnumach-.*-6\.1\.0\-37\-amd64$|^gnumach-.*-6\.1\.0\-37$|^.*-modules-6\.1\.0\-37\-amd64$|^.*-modules-6\.1\.0\-37$|^.*-kernel-6\.1\.0\-37\-amd64$|^.*-kernel-6\.1\.0\-37$) regexp to find running kernel packages
+pkgs that look like they should be upgraded: 
+Fetched 0 B in 0s (0 B/s)                                                       
+fetch.run() result: 0
+Packages blacklist due to conffile prompts: []
+No se encontraron paquetes que puedan actualizarse de forma desatendida y no hay pendiente ninguna desinstalación automática
+The list of kept packages can't be calculated in dry-run mode.

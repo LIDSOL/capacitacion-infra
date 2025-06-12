@@ -1,0 +1,9 @@
+---
+- name: Configurar todas las VMs Debian
+  hosts: debian_vms
+  become: true
+  roles:
+    - auto_updates
+    - firewall
+    - ssh_hardening
+    - nginx

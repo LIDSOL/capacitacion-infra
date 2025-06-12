@@ -1,0 +1,12 @@
+---
+- name: Instalar template de sshd_config
+  template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    mode: 0600
+    validate: /usr/sbin/sshd -t -f %s
+
+- name: Reiniciar SSH
+  systemd:
+    name: ssh
+    state: restarted
