@@ -12,11 +12,11 @@ Ya sabes que existe un servicio (bug.service) que ocasionalmente corta la conect
 
 ### Inyección del Bug de Red
 
-Utiliza el script bug.sh proporcionado en este directorio para instalar el servicio problemático en todas tus VMs. Puedes automatizar la ejecución de este script en todas las máquinas usando el módulo ansible.builtin.shell o ansible.builtin.script de Ansible, para no hacerlo manualmente una por una.
+Utiliza el servicio `bug.service` proporcionado en este directorio para instalar el servicio problemático en todas tus VMs. Automatiza la ejecución de este script en todas las máquinas usando ansible para copiar el archivo `bug.service` y habilitarlo.
 
 ### Diagnóstico y Mitigación
 
-Observa el comportamiento de las VMs tras instalar el bug. Notarás que la red se cae de forma aleatoria.
+Observa el comportamiento de las VMs tras instalar el bug. Notarás que la red se cae de forma aleatoria aunque igualmente se recupera sola tras unos minutos. Sin embargo, esto no es aceptable para un entorno de producción, ya que la conectividad intermitente puede causar problemas graves.
 
 Tu tarea es crear un playbook de Ansible que implemente una solución para recuperar automáticamente la conectividad de red cada vez que se pierda, sin desactivar ni modificar el servicio bug.service.
 Puedes apoyarte en scripts de monitoreo (por ejemplo, un script en bash que detecte la caída de la red y la reinicie), timers de systemd, o cualquier otra técnica automatizada que consideres adecuada.

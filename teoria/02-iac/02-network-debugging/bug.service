@@ -1,3 +1,4 @@
+# /etc/systemd/system/bug.service
 # Systemd service file that randomly cuts the internet every (10-15) minutes
 
 [Unit]
@@ -6,7 +7,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c 'while true; do sleep $((RANDOM % 300 + 600)); nmcli networking off; sleep $((RANDOM % 60 + 30)); nmcli networking on; done'
+ExecStart=/bin/bash -c 'while true; do sleep $((RANDOM % 300 + 600)); IFACE=$(ip route | awk "/default/ {print \$5; exit}"); ip link set "$IFACE" down; sleep $((RANDOM % 60 + 30)); ip link set "$IFACE" up; done'
 Restart=always
 RestartSec=5
 User=root
