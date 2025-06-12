@@ -1,0 +1,12 @@
+# Configuración segura de SSH
+Port 22
+Protocol 2
+PermitRootLogin no
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+PubkeyAuthentication yes
+X11Forwarding no
+ClientAliveInterval 300
+ClientAliveCountMax 2
+UsePAM yes
+AllowUsers debian  # Ajusta según tu usuario
