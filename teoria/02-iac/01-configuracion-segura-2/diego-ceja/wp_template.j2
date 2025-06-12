@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ vm_name }}</title>
+
+		<style>
+		html { color-scheme: light dark; }
+		body {
+			width: 35em;
+			margin: 0 auto;
+			font-family: "Courier New";
+			background-color: {{ color }};
+			align-items: center;
+		}
+		div { text-align: center; }
+		.text { animation: chcl 6s infinite; }
+		@keyframes chcl {
+			from { color: #ff000075; }
+			to { color: #000; }
+		}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<h1 class="text">LIDSOL capacitacion infra</h1>
+			<h3 class="text">IAC: practica 1</h3>
+			<p class="text">pagina web correspondiente a vm: {{ id }} (machine id)</p>
+		</div>
+	</body>
+</html>

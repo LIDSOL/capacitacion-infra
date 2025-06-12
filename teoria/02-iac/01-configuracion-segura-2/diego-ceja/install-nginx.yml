@@ -1,0 +1,25 @@
+---
+    - name: INSTALL nginx
+      apt:
+        name: nginx
+        update_cache: yes
+
+    - name: TEMPLATE WEB PAGE
+      ansible.builtin.template:
+        src: wp_template.j2
+        dest: /var/www/html/index.nginx-debian.html
+      vars:
+        vm_name: "{{ ansible_facts['hostname'] }}"
+        id: "{{ ansible_facts['machine_id'] }} "
+        color: "#{{ ansible_facts['machine_id'][0:8] }}"
+
+    - name: ENABLE nginx
+      service:
+        name: nginx
+        state: reloaded
+
+    - name: START nginx
+      service:
+        name: nginx
+        state: started
+
