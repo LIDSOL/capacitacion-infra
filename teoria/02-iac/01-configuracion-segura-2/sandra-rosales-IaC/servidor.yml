@@ -1,0 +1,23 @@
+---
+- name: Instalar Nginx
+  hosts: MV
+  become: true
+
+  tasks:
+    -  name: Instalar Nginx
+       apt:
+        name: nginx
+        state: present
+        update_cache: yes
+    -  name: Revisar que Nginx esté activo
+       systemd:
+         name: nginx
+         state: started
+         enabled: yes
+    -  name: Pagina index.html
+       template:
+          src: templates/index.html.j2
+          dest: /var/www/html/index.html
+          owner: www-data
+          group: www-data
+          mode: '0644'
