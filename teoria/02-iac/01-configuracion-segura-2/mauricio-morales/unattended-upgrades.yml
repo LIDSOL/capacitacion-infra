@@ -1,0 +1,15 @@
+---
+    - name: Install unnatended-upgrades and apt-listchanges
+      ansible.builtin.apt:
+        name:
+          - unattended-upgrades
+          - apt-listchanges
+        state: present
+        update_cache: yes
+
+    - name: Enable autoupdates
+      ansible.builtin.shell: echo unattended-upgrades unattended-upgrades/enable_auto_updates boolean true | debconf-set-selections
+
+    - name: DPKG reconfigure
+      ansible.builtin.command: dpkg-reconfigure -f noninteractive unattended-upgrades
+...
