@@ -1,0 +1,28 @@
+    - name: Configuración de SSH - deshabilitar root
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: 'PermitRootLogin no'
+
+    - name: Configuración de SSH - deshabilitar contraseña
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+
+    - name: Configuración de SSH - habilitar autenticación con llave pública
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^#PubkeyAuthentication'
+        line: 'PubkeyAuthentication yes'
+
+    - name: Configuración de SSH - deshabilitar X11Forwarding
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^X11Forwarding'
+        line: 'X11Forwarding no'
+
+    - name: Reiniciar SSHD
+      service:
+        name: ssh
+        state: restarted

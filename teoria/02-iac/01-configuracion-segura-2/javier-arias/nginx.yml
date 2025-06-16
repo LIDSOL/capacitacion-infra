@@ -1,0 +1,15 @@
+    - name: Instalar Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Asegurar que nginx esté activo
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Crear archivo index.html desde plantilla
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html

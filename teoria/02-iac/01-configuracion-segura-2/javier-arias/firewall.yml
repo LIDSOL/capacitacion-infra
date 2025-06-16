@@ -1,0 +1,42 @@
+    - name: Instalar nftables
+      apt:
+        name: nftables
+        state: present
+
+    - name: Configurar reglas de firewall con nftables
+      copy:
+        dest: /etc/nftables.conf
+        content: |
+            #!/usr/sbin/nft -f
+
+            flush ruleset
+
+            table inet filter {
+                chain input {
+              		type filter hook input priority 0;
+                    policy drop;
+
+              		ct state established, related accept
+
+              		iif "lo" accept
+
+              		tcp dport {22, 80, 443} accept
+
+              		reject with icmp type port-unreachable
+               	}
+
+               	chain forward {
+              		type filter hook forward priority 0;
+              		policy drop;
+               	}
+
+               	chain output {
+              		type filter hook output priority 0;
+                }
+            }
+
+    - name: Habilitar y arrancar nftables
+      systemd:
+        name: nftables
+        enabled: yes
+        state: restarted

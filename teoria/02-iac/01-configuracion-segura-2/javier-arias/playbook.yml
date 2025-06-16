@@ -1,0 +1,9 @@
+- name: Configuración de las VMs
+  hosts: vms
+  become: true
+
+  tasks:
+    - import_tasks: nginx.yml
+    - import_tasks: firewall.yml
+    - import_tasks: sshd.yml
+    - import_tasks: updates.yml
