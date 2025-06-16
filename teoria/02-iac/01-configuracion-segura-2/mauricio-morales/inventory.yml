@@ -1,0 +1,10 @@
+vmhosts:
+  hosts:
+    host_01:
+      ansible_host: 192.168.122.170
+    host_02:
+      ansible_host: 192.168.122.251
+    host_03:
+      ansible_host: 192.168.122.51
+  vars:
+    ansible_user: debian

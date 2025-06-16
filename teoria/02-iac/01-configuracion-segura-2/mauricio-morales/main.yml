@@ -1,0 +1,8 @@
+- name: VMS
+  hosts: vmhosts
+  become: true
+  tasks:
+    - ansible.builtin.import_tasks: unattended-upgrades.yml
+    - ansible.builtin.import_tasks: firewall.yml
+    - ansible.builtin.import_tasks: sshd.yml
+    - ansible.builtin.import_tasks: nginx.yml
