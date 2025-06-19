@@ -1,0 +1,29 @@
+---
+- name: Actualizar repositorios
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600  # 1 hora
+
+- name: Instalar nftables
+  apt:
+    name: nftables
+    state: present
+- name: Instalar nftables
+  apt:
+    name: nftables
+    state: present
+
+- name: Copiar configuración de firewall
+  template:
+    src: nftables.conf.j2
+    dest: /etc/nftables.conf
+    mode: 0644
+
+- name: Aplicar reglas de firewall
+  command: nft -f /etc/nftables.conf
+
+- name: Habilitar nftables al inicio
+  systemd:
+    name: nftables
+    enabled: yes
+    state: started

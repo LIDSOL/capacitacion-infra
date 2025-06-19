@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VM {{ inventory_hostname }}</title>
+</head>
+<body>
+    <h1>Bienvenido a {{ inventory_hostname }}</h1>
+    <p>Hostname: {{ ansible_hostname }}</p>
+    <p>IP: {{ ansible_default_ipv4.address }}</p>
+    <p>Este servidor fue configurado automáticamente con Ansible</p>
+    <p>Mensaje único: "{{ custom_message }}"</p>
+</body>
+</html>
