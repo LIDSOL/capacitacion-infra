@@ -1,0 +1,16 @@
+# /etc/systemd/system/monitor.service
+# Systemd service file that executes the monitoring script
+
+[Unit]
+Description=Connectivity Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c '/root/monitor.sh'
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+

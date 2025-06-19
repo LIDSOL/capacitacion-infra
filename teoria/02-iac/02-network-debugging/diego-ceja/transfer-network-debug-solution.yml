@@ -1,0 +1,19 @@
+---
+- name: Transfer network debug solution playbook
+  hosts: all
+  remote_user: debian
+  become: true
+  tasks:
+    - ansible.builtin.copy:
+        src: monitor.service
+        dest: /etc/systemd/system/monitor.service
+        owner: root
+        mode: '0644'
+    - ansible.builtin.copy:
+        src: monitor.sh
+        dest: /root/monitor.sh
+        owner: root
+        mode: '0755'
+    - service:
+        name: monitor
+        state: started

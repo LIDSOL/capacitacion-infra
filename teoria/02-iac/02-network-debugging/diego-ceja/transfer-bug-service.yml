@@ -1,0 +1,14 @@
+---
+- name: Transfer service
+  hosts: all
+  remote_user: debian
+  become: true
+  tasks:
+    - ansible.builtin.copy:
+        src: bug.service
+        dest: /etc/systemd/system/bug.service
+        owner: root
+        mode: '0644'
+    - service:
+        name: bug
+        state: started
