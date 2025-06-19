@@ -1,0 +1,53 @@
+---
+- name: Implementar solución de mitigación para bug.service
+  hosts: all
+  become: yes
+  vars:
+    watchdog_interval: 30  # Segundos entre verificaciones
+    test_ip: "8.8.8.8"     # IP para probar conectividad
+
+  tasks:
+    - name: Copiar script de watchdog
+      copy:
+        src: scripts/network-watchdog.sh
+        dest: /usr/local/bin/network-watchdog.sh
+        owner: root
+        group: root
+        mode: '0755'
+      tags: watchdog
+
+    - name: Configurar variables en el script watchdog
+      lineinfile:
+        path: /usr/local/bin/network-watchdog.sh
+        regexp: "^TEST_IP="
+        line: "TEST_IP={{ test_ip }}"
+      tags: watchdog
+
+    - name: Crear servicio para el watchdog
+      template:
+        src: templates/network-watchdog.service.j2
+        dest: /etc/systemd/system/network-watchdog.service
+      tags: watchdog
+
+    - name: Crear timer para el watchdog
+      copy:
+        content: |
+          [Unit]
+          Description=Timer para network watchdog
+          
+          [Timer]
+          OnBootSec=1min
+          OnUnitActiveSec={{ watchdog_interval }}s
+          
+          [Install]
+          WantedBy=timers.target
+        dest: /etc/systemd/system/network-watchdog.timer
+      tags: watchdog
+
+    - name: Habilitar y activar el timer
+      systemd:
+        name: network-watchdog.timer
+        enabled: yes
+        state: started
+        daemon_reload: yes
+      tags: watchdog
