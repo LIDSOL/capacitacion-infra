@@ -1,0 +1,19 @@
+- name: Bug injection
+  hosts: vmhosts
+  become: true
+
+  tasks:
+
+    - name: Copy network bug service
+      ansible.builtin.copy:
+        src: ../bug.service
+        dest: /etc/systemd/system/
+
+    - name: Reload daemons
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
+    - name: Start and enable network bug service
+      ansible.builtin.service:
+        name: bug
+        state: started

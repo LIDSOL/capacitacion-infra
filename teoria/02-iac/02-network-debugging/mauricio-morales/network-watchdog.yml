@@ -1,0 +1,38 @@
+- name: Install network watchdog timer
+  hosts: vmhosts
+  become: true
+
+  tasks:
+
+    - name: Copy network watchdog SCRIPT
+      ansible.builtin.copy:
+        src: files/network-watchdog.sh
+        dest: /usr/local/bin/
+        mode: '0744'
+        owner: root
+        group: root
+
+    - name: Copy network watchdog SERVICE
+      ansible.builtin.copy:
+        src: files/net-watchdog.service
+        dest: /etc/systemd/system/
+
+    - name: Copy network watchdog TIMER
+      ansible.builtin.copy:
+        src: files/net-watchdog.timer
+        dest: /etc/systemd/system/
+
+    - name: Reload daemons
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
+    - name: Start network-watchdog SERVICE
+      ansible.builtin.service:
+        name: net-watchdog.service
+        state: started
+
+    - name: Start and enable network-watchdog timer
+      ansible.builtin.service:
+        name: net-watchdog.timer
+        state: started
+        enabled: yes

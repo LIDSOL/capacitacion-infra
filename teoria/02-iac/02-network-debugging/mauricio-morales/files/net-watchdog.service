@@ -1,0 +1,16 @@
+# /etc/systemd/system/net-watchdog.service
+# Systemd service file that execs a script that tries to restart network interface
+
+[Unit]
+Description=Network Interface Restart Service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/network-watchdog.sh
+StandardOutput=journal
+StandardError=journal
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

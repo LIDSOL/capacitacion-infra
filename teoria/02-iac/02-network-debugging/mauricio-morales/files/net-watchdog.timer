@@ -1,0 +1,9 @@
+[Unit]
+Description=Network Interface Restart Timer
+
+[Timer]
+OnCalendar=*-*-* *:*:00/30
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
