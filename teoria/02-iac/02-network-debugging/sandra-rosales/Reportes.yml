@@ -1,0 +1,56 @@
+---
+- name: Reportes de bug
+  hosts: MV
+  become: true
+
+  tasks:
+    - name: Subir script de chequeo
+      copy:
+        dest: /usr/local/bin/bugcheck.sh
+        mode: '0755'
+        owner: root
+        group: root
+        content: |
+          #!/bin/bash
+          ping -c 3 8.8.8.8 > /dev/null 2>&1
+          if [ $? -ne 0 ]; then
+              echo "Ping falló en $(date). El sistema se reinició" >> /var/log/bugcheck.log
+              sleep 2
+              /sbin/reboot
+          fi
+
+    - name: Crear el servicio
+      copy:
+        dest: /etc/systemd/system/bugcheck.service
+        content: |
+          [Unit]
+          Description=Chequeo de ping
+
+          [Service]
+          Type=oneshot
+          ExecStart=/usr/local/bin/bugcheck.sh
+
+    - name: Crear el timer
+      copy:
+        dest: /etc/systemd/system/bugcheck.timer
+        content: |
+          [Unit]
+          Description=Timer para bugcheck cada 15 miutos
+
+          [Timer]
+          OnBootSec=5min
+          OnUnitActiveSec=15min
+          Unit=bugcheck.service
+
+          [Install]
+          WantedBy=timers.target
+
+    - name: Recargar systemd
+      command: systemctl daemon-reload
+
+    - name: Habilitar y arrancar el timer
+      systemd:
+        name: bugcheck.timer
+        enabled: true
+        state: started
+
