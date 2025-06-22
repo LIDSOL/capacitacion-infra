@@ -1,5 +1,0 @@
----
--  import_playbook: servidor.yml
--  import_playbook: actualizaciones.yml
--  import_playbook: SSHD.yml
-- import_playbook: firewall.yml
