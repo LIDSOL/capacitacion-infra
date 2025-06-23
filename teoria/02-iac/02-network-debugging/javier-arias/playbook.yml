@@ -1,0 +1,5 @@
+- name: Aplicar rol watchdog
+  hosts: vms
+  become: true
+  roles:
+    - watchdog

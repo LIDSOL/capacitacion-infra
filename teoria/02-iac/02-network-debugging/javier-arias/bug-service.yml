@@ -1,0 +1,15 @@
+- name: Instalar y activar bug.service
+  hosts: all
+  become: true
+  tasks:
+    - name: Copiar bug.service
+      copy:
+        src: ../bug.service
+        dest: /etc/systemd/system/bug.service
+        mode: '0644'
+
+    - name: Habilitar y arrancar bug.service
+      systemd:
+        name: bug.service
+        enabled: yes
+        state: started
