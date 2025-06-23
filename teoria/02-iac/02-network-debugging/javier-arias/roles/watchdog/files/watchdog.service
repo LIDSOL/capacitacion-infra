@@ -1,0 +1,6 @@
+[Unit]
+Description=Network watchdog script
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/watchdog.sh

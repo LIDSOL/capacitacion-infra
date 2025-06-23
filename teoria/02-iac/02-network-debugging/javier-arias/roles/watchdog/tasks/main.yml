@@ -1,0 +1,24 @@
+- name: Copiar watchdog.sh
+  copy:
+    src: watchdog.sh
+    dest: /usr/local/bin/watchdog.sh
+    mode: '0755'
+
+- name: Copiar servicio systemd
+  copy:
+    src: watchdog.service
+    dest: /etc/systemd/system/watchdog.service
+
+- name: Copiar timer systemd
+  copy:
+    src: watchdog.timer
+    dest: /etc/systemd/system/watchdog.timer
+
+- name: Recargar systemd
+  command: systemctl daemon-reexec
+
+- name: Habilitar y arrancar watchdog.timer
+  systemd:
+    name: watchdog.timer
+    enabled: yes
+    state: started
