@@ -1,0 +1,6 @@
+FROM docker.io/library/debian:stable-slim
+RUN apt-get update && \
+    apt-get install -y htop && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+CMD ["/bin/htop"]

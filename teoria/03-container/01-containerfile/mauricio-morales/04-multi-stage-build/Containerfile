@@ -1,0 +1,8 @@
+FROM docker.io/library/gcc:14.2 AS a
+WORKDIR /src
+COPY ./main.c ./main.c
+RUN gcc -static -o /bin/hola ./main.c
+
+FROM scratch AS b
+COPY --from=0 /bin/hola /bin/hola
+CMD ["/bin/hola"]
