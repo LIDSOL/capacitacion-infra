@@ -1,0 +1,8 @@
+FROM gcc:13.4.0 AS compilacion
+WORKDIR /src
+ADD container-hello.c /src/
+RUN gcc -fPIE -static-pie -o /bin/greeting ./container-hello.c
+
+FROM scratch
+COPY --from=compilacion /bin/greeting /bin/greeting
+CMD ["/bin/greeting"]

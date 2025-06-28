@@ -1,0 +1,13 @@
+FROM debian:stable-slim
+USER root
+
+ENV TERM=linux
+RUN apt-get update
+RUN apt-get install nginx -y
+
+EXPOSE 80
+
+VOLUME ["/var/www/html"]
+VOLUME ["/etc/nginx/"]
+
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

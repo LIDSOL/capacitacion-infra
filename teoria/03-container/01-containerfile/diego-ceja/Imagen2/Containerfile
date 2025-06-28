@@ -1,0 +1,13 @@
+FROM debian:stable-slim
+USER root
+
+ENV TERM=linux
+RUN apt-get update
+RUN apt-get install nginx -y
+
+EXPOSE 80
+
+ADD index.html /var/www/html/
+ADD lidsol_logo.png /var/www/html/
+
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

@@ -1,0 +1,8 @@
+FROM debian:stable-slim
+USER root
+
+RUN apt-get update
+RUN apt-get install htop -y
+ENV TERM=linux
+
+CMD ["/usr/bin/htop"]
