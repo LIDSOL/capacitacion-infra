@@ -1,0 +1,21 @@
+# Usa la imagen base de Debian estable
+FROM debian:stable
+
+# Actualiza el sistema e instala Nginx
+RUN apt-get update && \
+    apt-get install -y nginx && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Expone el puerto 80
+EXPOSE 80
+
+# Define los volúmenes para el contenido web y la configuración de Nginx
+VOLUME ["/var/www/html"]
+VOLUME ["/etc/nginx/conf.d"]
+
+# Copia el archivo de configuración de Nginx (opcional, puedes montarlo desde el host)
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Inicia Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
