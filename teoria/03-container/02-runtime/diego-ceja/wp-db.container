@@ -1,0 +1,9 @@
+[Container]
+Image=docker.io/library/mariadb:11
+Environment="MYSQL_DATABASE=wordpress"
+Environment="MYSQL_USER=wpuser"
+Environment="MYSQL_PASSWORD=wppass"
+Environment="MYSQL_ROOT_PASSWORD=rootpass"
+ContainerName=database
+Network=wpnet
+Volume=wp-dbdata:/var/lib/mysql

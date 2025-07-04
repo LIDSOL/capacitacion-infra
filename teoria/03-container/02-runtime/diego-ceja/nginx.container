@@ -1,0 +1,4 @@
+[Container]
+Image=docker.io/library/nginx:1.28
+PublishPort=33412:80
+Volume=ngx-html:/usr/share/nginx/html

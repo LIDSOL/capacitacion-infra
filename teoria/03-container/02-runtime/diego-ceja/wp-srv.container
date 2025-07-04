@@ -1,0 +1,12 @@
+[Unit]
+After=wp-db.container
+Requires=wp-db.container
+
+[Container]
+Image=docker.io/library/wordpress:6
+Environment="WORDPRESS_DB_HOST=database"
+Environment="WORDPRESS_DB_USER=wpuser"
+Environment="WORDPRESS_DB_PASSWORD=wppass"
+Environment="WORDPRESS_DB_NAME=wordpress"
+Network=wpnet
+PublishPort=44621:80
