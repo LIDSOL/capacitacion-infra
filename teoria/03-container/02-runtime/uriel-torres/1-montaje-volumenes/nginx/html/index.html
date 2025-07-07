@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIF Centrado</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Altura completa de la ventana */
-            margin: 0;
-            background-color: #f0f0f0; /* Color de fondo */
-        }
-        img {
-            max-width: 100%; /* Asegura que el GIF no exceda el ancho de la pantalla */
-            height: auto; /* Mantiene la proporción del GIF */
-        }
-    </style>
+    <title>Foro Retro</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <img src="hamster-hammy.gif" alt="GIF centrado">
+    <header>
+        <h1>Foro Retro</h1>
+        <p>Página de ejemplo para la capacitación</p>
+    </header>
+    <main>
+        <section class="post-form">
+            <h2>Crear un nuevo post</h2>
+            <form id="postForm">
+                <label for="username">Nombre:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+        <section class="posts" id="posts">
+            <h2>Posts Recientes</h2>
+            <!-- Los posts se agregarán aquí dinámicamente -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Capacitación lidsol</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
-
