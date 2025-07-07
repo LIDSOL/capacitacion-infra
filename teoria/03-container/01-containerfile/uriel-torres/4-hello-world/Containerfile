@@ -1,0 +1,26 @@
+# Etapa de construcción
+FROM rust:1.70 as builder
+
+# Establecer el directorio de trabajo
+WORKDIR /usr/src/hello
+
+# Copiar el archivo fuente
+COPY main.rs .
+
+# Instalar el objetivo musl
+RUN rustup target add x86_64-unknown-linux-musl
+
+# Compilar el programa de forma estática
+RUN cargo new --bin hello && \
+    mv main.rs hello/src/main.rs && \
+    cd hello && \
+    cargo build --release --target=x86_64-unknown-linux-musl
+
+# Etapa final
+FROM scratch
+
+# Copiar el binario compilado desde la etapa de construcción
+COPY --from=builder /usr/src/hello/hello/target/x86_64-unknown-linux-musl/release/hello .
+
+# Comando por defecto
+CMD ["./hello"]

@@ -1,0 +1,11 @@
+# Usa la imagen base de Debian stable-slim
+FROM debian:stable-slim
+
+# Actualiza el sistema e instala htop
+RUN apt-get update && \
+    apt-get install -y htop && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Establece el comando por defecto para ejecutar htop
+CMD ["htop"]
