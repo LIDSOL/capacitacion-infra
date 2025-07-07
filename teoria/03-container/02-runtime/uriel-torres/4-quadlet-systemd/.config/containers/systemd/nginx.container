@@ -1,0 +1,4 @@
+[Container]
+Image=nginx
+PublishPort=8080:80
+Volume=%h/html:/usr/share/nginx/html:ro
