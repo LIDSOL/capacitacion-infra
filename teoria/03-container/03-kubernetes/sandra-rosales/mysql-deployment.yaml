@@ -1,0 +1,74 @@
+#Con toda esta configuracion se permite que WordPress pueda conectarse con MariaDB usando  wordpress-mysql:3306 como host y que los datos no se pierdan 
+
+apiVersion: v1
+kind: Service   #Se especifica el tipo de recurso 
+metadata:
+  name: wordpress-mysql
+spec:
+  selector:    #Se seleccionan los pods para redirigir e tráfico
+    app: wordpress
+    tier: mysql
+  ports:
+    - port: 3306    #Es el puerto expiuesto por el sevidor, es decir el de MariaDB
+---
+#En esta parte se solicita almacenamiento para guardar los datos de MariaDB
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce    #Solo un nodo puede montar el volumen a la vez
+  resources:
+    requests:
+      storage: 1Gi    #solicita 1 GiB de almacenamiento 
+---
+#Se despliega el contenedor de MariaDB 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: mysql
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - image: mariadb:10.6    #Se usa la imagen de MariaDB 
+        name: mysql
+#Aquí se encuentran las variables de entorno secreto, para tener las credenciales de forma segura 
+        env:
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+#Se monta el volumen solicitado donde se guardaran los datos 
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
