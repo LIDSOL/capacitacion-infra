@@ -1,0 +1,84 @@
+###################################
+# Deployment que se encarga de todo 
+# lo relacionado con la aplicacion y
+# configuraciones de wordpress
+###################################
+
+# El servicio permite establecer la
+# manera en la que se podrá acceder
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+spec:
+  type: NodePort
+  selector:
+    app: wordpress
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80 # Puerto expuesto por el servicio
+---
+
+# Permite que los datos no se pierdan
+# si el contenedor se reinicia
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi # Solicita un GiB de almacenamiento
+---
+
+# Deployment en el que se indica el 
+# estado deseado de la aplicacion,
+# incluyendo la imagen, y todas las
+# relaciones con el pod de mysql 
+# (nombre de la db, usuario, contraseña)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress # Se asegura que el Deployment gestione los pods con esta etiqueta
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: wordpress # Etiqueta que permite al servicio identificar este pod
+        tier: frontend
+    spec:
+      containers:
+      - image: docker.io/library/wordpress:latest # Imagen de WordPress a utilizar
+        name: wordpress # Nombre del contenedor
+        env:
+        - name: WORDPRESS_DB_HOST # Dirección del servicio de base de datos
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD # Contraseña para la base de datos
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass # Nombre del Secret que contiene las credenciales
+              key: password
+        - name: WORDPRESS_DB_USER # Usuario para acceder a la base de datos
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass # Nombre del Secret que contiene las credenciales
+              key: username
+        - name: WORDPRESS_DB_NAME # Nombre de la base de datos
+          value: wordpress
+        ports:
+        - containerPort: 80 # Puerto donde escucha el contenedor WordPress
+          name: wordpress
+        volumeMounts:
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: wordpress-persistent-storage
+        persistentVolumeClaim:
+          claimName: wp-pv-claim
