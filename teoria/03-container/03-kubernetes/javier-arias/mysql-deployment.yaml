@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service #Tipo del recurso
+metadata:
+  name: wordpress-mysql #Nombre del servicio
+spec:
+  selector: #Aqui se indica a qué pods se les aplica este recurso
+    app: wordpress #Selecciona los pods con este nombre
+    tier: mysql #Indica el rol del componente
+  ports:
+    - port: 3306 #Expone el puerto 3306 dentro del cluster
+---
+apiVersion: v1
+kind: PersistentVolumeClaim #Este volumen permite que no se pierdan los datos si se reinicia el contenedor
+metadata:
+  name: mysql-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce #Solo un nodo puede montar el volumen a la vez
+  resources:
+    requests:
+      storage: 1Gi #Requiere un Gb de espacio
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+spec:
+  selector:
+    matchLabels:
+      app: wordpress #Selecciona los pods con estas etiquetas
+      tier: mysql
+  template: #Se define la plantilla para los nuevos pods creados
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - image: mariadb:10.6 #Imagen de la base de datos
+        name: mysql
+        env: #Variables de entorno
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef: #Usa el valor del Secret
+              name: mysql-pass
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef: #Usa el valor del Secret
+              name: mysql-pass
+              key: password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306 #Puerto utilizado por la base de datos
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage #Nombre del volumen donde se guardarå la base de datos
+          mountPath: /var/lib/mysql #Ruta del volumen
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim #Se asocia el Persistent Volume Claim definido previamente

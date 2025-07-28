@@ -1,0 +1,8 @@
+FROM docker.io/library/gcc:14.2 AS a
+WORKDIR /src
+COPY ./hello-world.c ./hello-world.c
+RUN gcc -static -o /bin/hello ./hello-world.c
+
+FROM scratch
+COPY --from=0 /bin/hello /bin/hello
+CMD ["/bin/hello"]

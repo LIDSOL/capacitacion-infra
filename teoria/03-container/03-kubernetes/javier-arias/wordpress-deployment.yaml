@@ -1,0 +1,70 @@
+#Hace accesible la interfaz web de wordpress a través de un puerto
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+spec:
+  type: NodePort
+  selector:
+    app: wordpress
+    tier: frontend
+  ports:
+    - protocol: TCP
+      port: 80 #Puerto que expone el servicio
+---
+#Almacenamiento persistente para la aplicación de wordpress
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+#Especifica el deployment para wordpress
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: frontend
+    spec:
+      containers:
+      - image: wordpress:latest #Se usa la versíón más reciente
+        name: wordpress
+        env:
+        - name: WORDPRESS_DB_HOST #Enlaza a wordpress con la base de datos
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef: #Se usa el valor del Secret
+              name: mysql-pass
+              key: password
+        - name: WORDPRESS_DB_USER
+          valueFrom:
+            secretKeyRef: #Se usa el valor del Secret
+              name: mysql-pass
+              key: username
+        - name: WORDPRESS_DB_NAME
+          value: wordpress
+        ports:
+        - containerPort: 80
+          name: wordpress
+        volumeMounts:
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html #Se monta el volumen donde wordpress alamcena su contenido
+      volumes:
+      - name: wordpress-persistent-storage
+        persistentVolumeClaim:
+          claimName: wp-pv-claim #Se asocia al PVC creado previamente
