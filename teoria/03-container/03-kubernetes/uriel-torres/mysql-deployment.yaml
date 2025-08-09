@@ -1,0 +1,69 @@
+apiVersion: v1                  # Versión de la API de Kubernetes
+kind: Service                   # Recurso tipo servicio, expone la aplicación
+metadata:                       # Se inicia la sección de metadatos
+  name: wordpress-mysql         # Nombre del servicio
+spec:                           # Especificaciones del servicio
+  selector:                     # Selector, identifica los Pods
+    app: wordpress              # Pod seleccionado
+    tier: mysql                 # Pod seleccionado
+  ports:                        # Define los puertos que se expondrán
+    - port: 3306                # El puerto que escucha
+---
+apiVersion: v1                  # Versión de la API de Kubernetes
+kind: PersistentVolumeClaim     # Tipo, almacenamiento persistente
+metadata:                       # Metadata del recurso
+  name: mysql-pv-claim          # Nombre del recurso de almacenamiento
+spec:                           # Define especificaciones del PVC
+  accessModes:                  # Modos de acceso al almacenamiento
+    - ReadWriteOnce             # Lectura y escritura por un solo nodo
+  resources:                    # Inicia la definición de los recursos
+    requests:                   # Solicitudes de recursos
+      storage: 1Gi              # Almacenamiento de 1 GiB
+---
+apiVersion: apps/v1             # Versión de API de Kubernetes
+kind: Deployment                # Recurso tipo Deployment, gestiona Pods
+metadata:                       # Inicia sección de metadatos
+  name: wordpress-mysql         # Nombre del Deployment
+spec:                           # Inician las especificaciones
+  selector:                     # Cuales Pods debe gestionar el Deployment
+    matchLabels:                # Etiquetas de los Pods a gestionar
+      app: wordpress            # Etiqueta del recurso antes creado
+      tier: mysql               # Etiqueta del recurso antes creado
+  template:                     # Plantilla para crear Pods
+    metadata:                   # Metadatos de los Pods
+      labels:                   # Etiquetas que se asignarán a los Pods
+        app: wordpress          # Etiqueta de la aplicación
+        tier: mysql             # Etiqueta del tier
+    spec:                       # Especificaciones de los Pods
+      containers:               # Sección que define los contenedores
+      - image: mariadb:10.6     # Imagen del contenedor de MariaDB
+        name: mysql             # Nombre del contenedor
+        env:                    # Var de entorno para el contenedor
+        - name: MYSQL_DATABASE  # Nombre de la variable de entorno
+          value: wordpress      # Valor de la base de datos a crear
+        - name: MYSQL_USER      # Nombre de la var de entorno del user
+          valueFrom:            # Valor tomado de un Secret
+            secretKeyRef:       # Referencia a un Secret
+              name: mysql-pass  # Nombre del Secret
+              key: username     # Clave dentro del Secret para user
+        - name: MYSQL_PASSWORD  # Nombre de la var de entorno para la contraseña
+          valueFrom:            # Valor tomado de un Secret
+            secretKeyRef:       # Referencia a un Secret
+              name: mysql-pass  # Nombre del Secret
+              key: password     # Clave dentro del Secret para la contraseña
+        - name: MYSQL_ROOT_PASSWORD # Nombre de la variable de entorno para la contraseña de root
+          valueFrom:            # Valor tomado de un Secret
+            secretKeyRef:       # Referencia a un Secret
+              name: mysql-pass  # Nombre del Secret
+              key: password     # Clave dentro del Secret para la contraseña de root
+        ports:                  # Puertos expuestos por el contenedor
+        - containerPort: 3306   # Puerto del contenedor
+          name: mysql           # Nombre del puerto
+        volumeMounts:           # Montajes de volúmenes en el contenedor
+        - name: mysql-persistent-storage # Nombre del volumen
+          mountPath: /var/lib/mysql # Ruta donde se montará el volumen
+      volumes:                  # Sección que define los volúmenes
+      - name: mysql-persistent-storage # Nombre del volumen persistente
+        persistentVolumeClaim:   # Referencia a PersistentVolumeClaim
+          claimName: mysql-pv-claim # Nombre del PVC que se utilizará
+

@@ -1,0 +1,17 @@
+# Usa la imagen base de Debian estable
+FROM debian:stable
+
+# Actualiza el sistema e instala Nginx
+RUN apt-get update && \
+    apt-get install -y nginx neovim && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copia el archivo index.html y la imagen al directorio de Nginx
+COPY index.html /var/www/html/index.html
+                                                                        
+# Expone el puerto 80
+EXPOSE 80
+
+# Inicia Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
