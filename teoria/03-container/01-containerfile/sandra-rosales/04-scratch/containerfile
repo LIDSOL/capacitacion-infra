@@ -1,0 +1,15 @@
+
+#Etapa 1: compilación se usa gcc para la compilación en C
+FROM docker.io/library/gcc:bullseye AS build
+
+WORKDIR /src
+COPY ./hola.c ./hola.c
+
+RUN gcc -static -o /bin/hola ./hola.c
+
+#Etapa 2: imagen mínima 
+FROM scratch
+
+COPY --from=build /bin/hola /bin/hola
+
+CMD ["/bin/hola"]

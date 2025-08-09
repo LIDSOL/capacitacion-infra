@@ -1,0 +1,60 @@
+---
+- name: Configurar firewall con nftables
+  hosts: MV
+  become: true
+
+  tasks:
+    - name: Instalar nftables
+      apt:
+        name: nftables
+        state: present
+        update_cache: yes
+
+    - name: Habilitar y arrancar el servicio de nftables
+      systemd:
+        name: nftables
+        enabled: yes
+        state: started
+
+    - name: Configurar reglas de firewall
+      copy:
+        dest: /etc/nftables.conf
+        content: |
+          flush ruleset
+
+          table inet filter {
+            chain input {
+              type filter hook input priority 0;
+
+              # Aceptar tráfico de loopback
+              iif lo accept
+
+              # Aceptar conexiones ya establecidas
+              ct state established,related accept
+
+              # Permitir SSH
+              tcp dport 22 accept
+
+              # Permitir HTTP
+              tcp dport 80 accept
+
+              # Permitir HTTPS
+              tcp dport 443 accept
+
+              # Denegar todo lo demás
+              counter drop
+            }
+
+            chain forward {
+              type filter hook forward priority 0;
+              counter drop
+            }
+
+            chain output {
+              type filter hook output priority 0;
+              accept
+            }
+          }
+
+    - name: Recargar configuración de nftables
+      command: nft -f /etc/nftables.conf
