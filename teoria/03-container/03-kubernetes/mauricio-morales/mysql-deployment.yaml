@@ -1,0 +1,86 @@
+###################################
+# Deployment que maneja la db de 
+# mysql que se usará para wordpress
+###################################
+
+# Servicio que permite describir como
+# se va acceder a la db
+apiVersion: v1 
+kind: Service
+metadata:
+  name: wordpress-mysql
+spec:
+  selector:
+    app: wordpress # El servicio selecciona pods con esta etiqueta
+    tier: mysql # Y con este nivel
+  ports:
+    - port: 3306 # Puerto del servicio MySQL
+---
+
+# El PersistetVolumeClaim permite que 
+# los datos no se pierdan si el 
+# contenedor se reinicia.
+apiVersion: v1 
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi # Solicita 20 GiB de almacenamiento
+---
+
+# Permite definir el estado deseado del pod
+# En él se se establece la imagen del
+# contenedor que se va a usar y ademas se
+# indican todo lo necesarios (variables, 
+# puertos, etc) mysql para poder conectarse 
+# con el pod de wordpress
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: mysql
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - image: mariadb:10.6
+        name: mysql
+        env:
+        - name: MYSQL_DATABASE
+          value: wordpress
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
