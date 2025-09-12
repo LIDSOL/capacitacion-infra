@@ -1,0 +1,15 @@
+loading plugins from ['/etc/unattended-upgrades/plugins/', '/usr/share/unattended-upgrades/plugins']
+Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+Starting unattended upgrades script
+Allowed origins are: origin=Debian,codename=trixie,label=Debian, origin=Debian,codename=trixie,label=Debian-Security, origin=Debian,codename=trixie-security,label=Debian-Security, origin=Debian,codename=trixie-updates, origin=Debian,codename=trixie,label=Debian, origin=Debian,codename=trixie,label=Debian-Security, origin=Debian,codename=trixie-security,label=Debian-Security
+Initial blacklist: 
+Initial whitelist (not strict): 
+Using (^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^linux-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^kfreebsd-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^gnumach-.*-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-modules-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$|^.*-kernel-[1-9][0-9]*\.[0-9]+\.[0-9]+-[0-9]+(-.+)?$) regexp to find kernel packages
+Using (^linux-.*-6\.12\.41\+deb13\-amd64$|^kfreebsd-.*-6\.12\.41\+deb13\-amd64$|^gnumach-.*-6\.12\.41\+deb13\-amd64$|^.*-modules-6\.12\.41\+deb13\-amd64$|^.*-kernel-6\.12\.41\+deb13\-amd64$|^linux-.*-6\.12\.41\+deb13\-amd64$|^kfreebsd-.*-6\.12\.41\+deb13\-amd64$|^gnumach-.*-6\.12\.41\+deb13\-amd64$|^.*-modules-6\.12\.41\+deb13\-amd64$|^.*-kernel-6\.12\.41\+deb13\-amd64$) regexp to find running kernel packages
+pkgs that look like they should be upgraded: 
+Fetched 0 B in 0s (0 B/s)                                                      
+fetch.run() result: 0
+Packages blacklist due to conffile prompts: []
+No packages found that can be upgraded unattended and no pending auto-removals
+The list of kept packages can't be calculated in dry-run mode.
+upgrade result: True No packages found that can be upgraded unattended and no pending auto-removals

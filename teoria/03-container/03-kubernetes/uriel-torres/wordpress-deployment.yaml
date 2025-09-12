@@ -1,0 +1,67 @@
+apiVersion: v1                  # Versión de la API de Kubernetes
+kind: Service                   # Recurso tipo servicio
+metadata:                       # Se inicia la sección de metadatos
+  name: wordpress               # Nombre del servicio
+spec:                           # Especificaciones del servicio
+  type: NodePort                # Tipo de servicio, expone en un puerto del nodo
+  selector:                     # Selector, identifica los Pods
+    app: wordpress              # Pod seleccionado
+    tier: frontend              # Pod seleccionado
+  ports:                        # Define los puertos que se expondrán
+    - protocol: TCP             # Protocolo utilizado
+      port: 80                  # El puerto que escucha
+---
+apiVersion: v1                  # Versión de la API de Kubernetes
+kind: PersistentVolumeClaim     # Tipo, almacenamiento persistente
+metadata:                       # Metadata del recurso
+  name: wp-pv-claim             # Nombre del recurso de almacenamiento
+spec:                           # Define especificaciones del PVC
+  accessModes:                  # Modos de acceso al almacenamiento
+    - ReadWriteOnce             # Lectura y escritura por un solo nodo
+  resources:                    # Inicia la definición de los recursos
+    requests:                   # Solicitudes de recursos
+      storage: 1Gi              # Almacenamiento de 1 GiB
+---
+apiVersion: apps/v1             # Versión de API de Kubernetes
+kind: Deployment                # Recurso tipo Deployment, gestiona Pods
+metadata:                       # Inicia sección de metadatos
+  name: wordpress               # Nombre del Deployment
+spec:                           # Inician las especificaciones
+  selector:                     # Cuales Pods debe gestionar el Deployment
+    matchLabels:                # Etiquetas de los Pods a gestionar
+      app: wordpress            # Etiqueta del recurso antes creado
+      tier: frontend            # Etiqueta del recurso antes creado
+  template:                     # Plantilla para crear Pods
+    metadata:                   # Metadatos de los Pods
+      labels:                   # Etiquetas que se asignarán a los Pods
+        app: wordpress          # Etiqueta de la aplicación
+        tier: frontend          # Etiqueta del tier
+    spec:                       # Especificaciones de los Pods
+      containers:               # Sección que define los contenedores
+      - image: wordpress:latest  # Imagen del contenedor de WordPress
+        name: wordpress         # Nombre del contenedor
+        env:                    # Variables de entorno para el contenedor
+        - name: WORDPRESS_DB_HOST # Nombre de la variable de entorno para el host de la base de datos
+          value: wordpress-mysql  # Valor del host de la base de datos
+        - name: WORDPRESS_DB_PASSWORD # Nombre de la variable de entorno para la contraseña de la base de datos
+          valueFrom:            # Valor tomado de un Secret
+            secretKeyRef:       # Referencia a un Secret
+              name: mysql-pass   # Nombre del Secret
+              key: password      # Clave dentro del Secret para la contraseña
+        - name: WORDPRESS_DB_USER # Nombre de la variable de entorno para el usuario de la base de datos
+          valueFrom:            # Valor tomado de un Secret
+            secretKeyRef:       # Referencia a un Secret
+              name: mysql-pass   # Nombre del Secret
+              key: username      # Clave dentro del Secret para el usuario
+        - name: WORDPRESS_DB_NAME # Nombre de la variable de entorno para el nombre de la base de datos
+          value: wordpress       # Valor del nombre de la base de datos
+        ports:                  # Puertos expuestos por el contenedor
+        - containerPort: 80      # Puerto del contenedor
+          name: wordpress        # Nombre del puerto
+        volumeMounts:           # Montajes de volúmenes en el contenedor
+        - name: wordpress-persistent-storage # Nombre del volumen
+          mountPath: /var/www/html # Ruta donde se montará el volumen
+      volumes:                  # Sección que define los volúmenes
+      - name: wordpress-persistent-storage # Nombre del volumen persistente
+        persistentVolumeClaim:   # Referencia a un PersistentVolumeClaim
+          claimName: wp-pv-claim # Nombre del PVC que se utilizará

@@ -1,0 +1,5 @@
+# Usa la imagen base de Debian stable-slim
+FROM debian:stable-slim
+
+# Establece el comando por defecto para ejecutar un shell
+CMD ["sh"]
