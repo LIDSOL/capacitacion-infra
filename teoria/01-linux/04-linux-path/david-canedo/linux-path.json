@@ -1,0 +1,750 @@
+{
+    "UserManagement": {
+        "usersandgroups": {
+            "quizQuestion": "What command do you use to run as root?",
+            "quizAnswer": "sudo"
+        },
+        "usermanagementtools": {
+            "quizQuestion": "What command is used to change a password?",
+            "quizAnswer": "passwd"
+        },
+        "rootuser": {
+            "quizQuestion": "What file shows the users who have access to sudo?",
+            "quizAnswer": "/etc/sudoers"
+        },
+        "etcpasswdfile": {
+            "quizQuestion": "If a user doesn't have login access how is that denoted in /etc/passwd?",
+            "quizAnswer": "*"
+        },
+        "etcgroupfile": {
+            "quizQuestion": "What is the GID of root?",
+            "quizAnswer": "0"
+        }
+    },
+    "TheFilesystem": {
+        "symlinks": {
+            "quizQuestion": "What is the command used to make a symlink?",
+            "quizAnswer": "ln -s"
+        },
+        "swapspace": {
+            "quizQuestion": "What is the command to enable swap space on a device?",
+            "quizAnswer": "swapon"
+        },
+        "mountingandunmountingfilesystems": {
+            "quizQuestion": "What command is used to attach a filesystem?",
+            "quizAnswer": "mount"
+        },
+        "inodes": {
+            "quizQuestion": "How do you see how many inodes are left on your system?",
+            "quizAnswer": "df -i"
+        },
+        "filesystemtypes": {
+            "quizQuestion": "What is the common Linux filesystem type?",
+            "quizAnswer": "ext4"
+        },
+        "filesystemrepair": {
+            "quizQuestion": "What command is used to check the integrity of a filesystem?",
+            "quizAnswer": "fsck"
+        },
+        "filesystemhierarchy": {
+            "quizQuestion": "What directory is used to store logs?",
+            "quizAnswer": "/var"
+        },
+        "etcfstabfilesystemtable": {
+            "quizQuestion": "What file is used to define how filesystems should be mounted?",
+            "quizAnswer": "/etc/fstab"
+        },
+        "diskusage": {
+            "quizQuestion": "What command is use to show how much space is free on your disk?",
+            "quizAnswer": "df"
+        },
+        "diskpartitioning": {
+            "quizQuestion": "What is the parted command to make a partition?",
+            "quizAnswer": "mkpart"
+        },
+        "creatingfilesystems": {
+            "quizQuestion": "What command is used to create a filesystem?",
+            "quizAnswer": "mkfs"
+        },
+        "anatomyofadisk": {
+            "quizQuestion": "What partition type is used to create more than 4 partitions in the MBR partitioning scheme?",
+            "quizAnswer": "extended"
+        }
+    },
+    "TextFu": {
+        "uniquniquecommand": {
+            "quizQuestion": "What command would you use to remove duplicates in a file?",
+            "quizAnswer": "uniq"
+        },
+        "trtranslatecommand": {
+            "quizQuestion": "What command is used to translate characters?",
+            "quizAnswer": "tr"
+        },
+        "tailcommand": {
+            "quizQuestion": "What is the flag used to follow a file in tail?",
+            "quizAnswer": "-f"
+        },
+        "stdoutstandardoutredirect": {
+            "quizQuestion": "What redirector do you use to append output to a file?",
+            "quizAnswer": ">>"
+        },
+        "stdinstandardinredirect": {
+            "quizQuestion": "What redirector do you use to redirect stdin?",
+            "quizAnswer": "<"
+        },
+        "stderrstandarderrorredirect": {
+            "quizQuestion": "What is the redirector for stderr?",
+            "quizAnswer": "2>"
+        },
+        "sortcommand": {
+            "quizQuestion": "What flag do you use to do a reverse sort?",
+            "quizAnswer": "-r"
+        },
+        "pipeteeredirect": {
+            "quizQuestion": "What key represents the pipe operator?",
+            "quizAnswer": "|"
+        },
+        "pastecommand": {
+            "quizQuestion": "What flag do you use with paste to make everything go on one line?",
+            "quizAnswer": "-s"
+        },
+        "nlwccommand": {
+            "quizQuestion": "What command would you use to get the total number of words in a file and just the words?",
+            "quizAnswer": "wc -w"
+        },
+        "joinsplitcommand": {
+            "quizQuestion": "What command would you use to join files named cat dog cow?",
+            "quizAnswer": "join cat dog cow"
+        },
+        "headcommand": {
+            "quizQuestion": "What flag would you use to change the number of lines you want to view for the head command?",
+            "quizAnswer": "-n"
+        },
+        "grepcommand": {
+            "quizQuestion": "What command do you use to find a certain pattern?",
+            "quizAnswer": "grep"
+        },
+        "expandunexpandcommand": {
+            "quizQuestion": "What command is used to convert TABs to spaces?",
+            "quizAnswer": "expand"
+        },
+        "envenvironment": {
+            "quizQuestion": "How do you see your environment variables?",
+            "quizAnswer": "env"
+        },
+        "cutcommand": {
+            "quizQuestion": "What command would you use to get the first character of every line in a file?",
+            "quizAnswer": "cut -c 1"
+        }
+    },
+    "Subnetting": {
+        "subnettingcheats": {
+            "quizQuestion": "What is the binary conversion of 123?",
+            "quizAnswer": "1111011"
+        },
+        "subnets": {
+            "quizQuestion": "True or false, a subnet consists of a subnet mask and network prefix.",
+            "quizAnswer": "true"
+        },
+        "subnetmath": {
+            "quizQuestion": "What is the binary equivalent of 255?",
+            "quizAnswer": "11111111"
+        },
+        "natnetworkaddresstranslation": {
+            "quizQuestion": "What is used to represent a single private address to the Internet?",
+            "quizAnswer": "NAT"
+        },
+        "ipv6": {
+            "quizQuestion": "What IP address is used to help increase the number of hosts that can connect to the Internet?",
+            "quizAnswer": "IPv6"
+        },
+        "ipv4": {
+            "quizQuestion": "How many bytes are in an IPv4 address?",
+            "quizAnswer": "4"
+        }
+    },
+    "Routing": {
+        "whatisarouter": {
+            "quizQuestion": "How do packets measure distance?",
+            "quizAnswer": "hops"
+        },
+        "routingtable": {
+            "quizQuestion": "Where are packets routed to if our routing table doesn't know?",
+            "quizAnswer": "gateway"
+        },
+        "routingprotocols": {
+            "quizQuestion": "What is the term used when all routing tables know the network topology?",
+            "quizAnswer": "Convergence"
+        },
+        "pathofapacket": {
+            "quizQuestion": "How do we find the MAC address of an IP address?",
+            "quizAnswer": "ARP"
+        },
+        "linkstateprotocols": {
+            "quizQuestion": "What is one of the most common link state protocols?",
+            "quizAnswer": "OSPF"
+        },
+        "distancevectorprotocols": {
+            "quizQuestion": "True or false, distance protocols use the route with the least amount of bandwidth?",
+            "quizAnswer": "false"
+        },
+        "bgpbordergatewayprotocol": {
+            "quizQuestion": "What protocol basically makes the Internet work?",
+            "quizAnswer": "BGP"
+        }
+    },
+    "Processes": {
+        "procfilesystem": {
+            "quizQuestion": "What filesystem stores process information?",
+            "quizAnswer": "/proc"
+        },
+        "processtermination": {
+            "quizQuestion": "What is the most common termination status for a process succeeding?",
+            "quizAnswer": "0"
+        },
+        "processstates": {
+            "quizQuestion": "What STAT code is used to represent an uninterruptible sleep?",
+            "quizAnswer": "D"
+        },
+        "processsignals": {
+            "quizQuestion": "What signal is unblockable?",
+            "quizAnswer": "SIGKILL"
+        },
+        "processniceness": {
+            "quizQuestion": "If I want a process to get more CPU priority, do I use a lower or higher nice number?",
+            "quizAnswer": "lower"
+        },
+        "processdetails": {
+            "quizQuestion": "What manages and controls processes?",
+            "quizAnswer": "kernel"
+        },
+        "processcreation": {
+            "quizQuestion": "What system call creates a new process?",
+            "quizAnswer": "fork"
+        },
+        "monitorprocessespscommand": {
+            "quizQuestion": "What ps flag is used to view detailed information about processes?",
+            "quizAnswer": "u"
+        },
+        "killingprocesses": {
+            "quizQuestion": "What is the signal name for the default kill command?",
+            "quizAnswer": "SIGTERM"
+        },
+        "jobcontrol": {
+            "quizQuestion": "What command is used to list background jobs?",
+            "quizAnswer": "jobs"
+        },
+        "controllingterminal": {
+            "quizQuestion": "What value is given for a process that does not have a controlling terminal?",
+            "quizAnswer": "?"
+        }
+    },
+    "ProcessUtilization": {
+        "trackingprocessestop": {
+            "quizQuestion": "What command displays the same output as the first line in top?",
+            "quizAnswer": "uptime"
+        },
+        "trackingprocesseslsoffuser": {
+            "quizQuestion": "What command is used to list open files and their process information?",
+            "quizAnswer": "lsof"
+        },
+        "processthreads": {
+            "quizQuestion": "True or false, all processes start out single-threaded.",
+            "quizAnswer": "true"
+        },
+        "memorymonitoring": {
+            "quizQuestion": "What tool is used to view memory utilization?",
+            "quizAnswer": "vmstat"
+        },
+        "iomonitoring": {
+            "quizQuestion": "What command can be used to view I/O and CPU usage?",
+            "quizAnswer": "iostat"
+        },
+        "cronjobs": {
+            "quizQuestion": "What is the command to edit your cronjobs?",
+            "quizAnswer": "crontab -e"
+        },
+        "cpumonitoring": {
+            "quizQuestion": "What command can you use to see the load average?",
+            "quizAnswer": "uptime"
+        },
+        "continuousmonitoring": {
+            "quizQuestion": "What is a good tool to use for monitoring system resources?",
+            "quizAnswer": "sar"
+        }
+    },
+    "Permissions": {
+        "umask": {
+            "quizQuestion": "What command is used to change default file permissions?",
+            "quizAnswer": "umask"
+        },
+        "stickybit": {
+            "quizQuestion": "What symbol represents the sticky bit?",
+            "quizAnswer": "t"
+        },
+        "setuidsetuserid": {
+            "quizQuestion": "What number represents the SUID?",
+            "quizAnswer": "4"
+        },
+        "setgidsetgroupid": {
+            "quizQuestion": "What number represents the SGID?",
+            "quizAnswer": "2"
+        },
+        "processpermissions": {
+            "quizQuestion": "What UID decides what access to grant?",
+            "quizAnswer": "effective"
+        },
+        "ownershippermissions": {
+            "quizQuestion": "What command do you use to change user ownership?",
+            "quizAnswer": "chown"
+        },
+        "modifyingpermissions": {
+            "quizQuestion": "What number represents the read permission when using numerical format?",
+            "quizAnswer": "4"
+        },
+        "filepermissions": {
+            "quizQuestion": "What permission bit is used for executable?",
+            "quizAnswer": "x"
+        }
+    },
+    "Packages": {
+        "packagerepositories": {
+            "quizQuestion": "Where is the sources file in a Debian system?",
+            "quizAnswer": "/etc/apt/sources.list"
+        },
+        "packagemanagementsystems": {
+            "quizQuestion": "What command is used to show package information on a Debian system?",
+            "quizAnswer": "apt show"
+        },
+        "packageinstalltools": {
+            "quizQuestion": "What is the package management tool for .deb files?",
+            "quizAnswer": "dpkg"
+        },
+        "compressedarchivestar": {
+            "quizQuestion": "What tar flag is used to create archives?",
+            "quizAnswer": "c"
+        },
+        "compilesourcecode": {
+            "quizQuestion": "What should you use instead of make install ALWAYS?",
+            "quizAnswer": "checkinstall"
+        }
+    },
+    "NetworkTroubleshooting": {
+        "traceroute": {
+            "quizQuestion": "What gets decremented by one when making hops across the network?",
+            "quizAnswer": "ttl"
+        },
+        "ping": {
+            "quizQuestion": "What is the roundtrip time unit of measurement?",
+            "quizAnswer": "ms"
+        },
+        "packetanalysis": {
+            "quizQuestion": "What is the flag to capture a specific interface with tcpdump?",
+            "quizAnswer": "-i"
+        },
+        "netstat": {
+            "quizQuestion": "What port is used for HTTPS?",
+            "quizAnswer": "443"
+        },
+        "icmp": {
+            "quizQuestion": "What is the ICMP type for echo request?",
+            "quizAnswer": "8"
+        }
+    },
+    "NetworkSharing": {
+        "simplehttpserver": {
+            "quizQuestion": "What tool can you use to create a simple http server with python?",
+            "quizAnswer": "SimpleHTTPServer"
+        },
+        "samba": {
+            "quizQuestion": "What is the latest protocol used for file transfer between Windows and Linux?",
+            "quizAnswer": "cifs"
+        },
+        "rsync": {
+            "quizQuestion": "What command would be useful for data backups?",
+            "quizAnswer": "rsync"
+        },
+        "nfsnetworkfileshare": {
+            "quizQuestion": "What tool is used to manage mount points automatically?",
+            "quizAnswer": "automount"
+        },
+        "networkfilesharing": {
+            "quizQuestion": "What command can you use to securely copy files from one host to another?",
+            "quizAnswer": "scp"
+        }
+    },
+    "NetworkConfig": {
+        "route": {
+            "quizQuestion": "What is the command flag to delete a route?",
+            "quizAnswer": "del"
+        },
+        "networkmanager": {
+            "quizQuestion": "What is the command to view NetworkManager information?",
+            "quizAnswer": "nm-tool"
+        },
+        "networkinterfaces": {
+            "quizQuestion": "What is the command to configure our network interfaces?",
+            "quizAnswer": "ifconfig"
+        },
+        "dhclient": {
+            "quizQuestion": "What tries to assign IP addresses with the DHCP protocol?",
+            "quizAnswer": "dhclient"
+        },
+        "arpcommand": {
+            "quizQuestion": "What command can you use to view your ARP cache?",
+            "quizAnswer": "arp"
+        }
+    },
+    "NetworkBasics": {
+        "transportlayer": {
+            "quizQuestion": "What is a reliable transport protocol?",
+            "quizAnswer": "TCP"
+        },
+        "tcpipmodel": {
+            "quizQuestion": "What is the top layer of the TCP/IP model?",
+            "quizAnswer": "application"
+        },
+        "osimodel": {
+            "quizQuestion": "What is used as the theoretical model of networking?",
+            "quizAnswer": "OSI"
+        },
+        "networklayer": {
+            "quizQuestion": "What are smaller networks that make up the Internet called?",
+            "quizAnswer": "subnets"
+        },
+        "networkbasics": {
+            "quizQuestion": "What is the local area network known as?",
+            "quizAnswer": "LAN"
+        },
+        "networkaddressing": {
+            "quizQuestion": "How many bytes are in an IPv4 address?",
+            "quizAnswer": "4"
+        },
+        "linklayer": {
+            "quizQuestion": "What is used to find the MAC address on the same network?",
+            "quizAnswer": "ARP"
+        },
+        "dhcpoverview": {
+            "quizQuestion": "What are the steps in a DHCP request?",
+            "quizAnswer": "DISCOVER, OFFER, REQUEST, ACK"
+        },
+        "applicationlayer": {
+            "quizQuestion": "What layer is used to present the packet data in a user friendly format?",
+            "quizAnswer": "application"
+        }
+    },
+    "Logging": {
+        "systemlogging": {
+            "quizQuestion": "What is the daemon that manages log on newer Linux systems?",
+            "quizAnswer": "rsyslogd"
+        },
+        "syslog": {
+            "quizQuestion": "What command can you use to manually log a message?",
+            "quizAnswer": "logger"
+        },
+        "managinglogfiles": {
+            "quizQuestion": "What utility is used to manage logs?",
+            "quizAnswer": "logratate"
+        },
+        "kernellogging": {
+            "quizQuestion": "What command can be used to view kernel bootup messages?",
+            "quizAnswer": "dmesg"
+        },
+        "generallogging": {
+            "quizQuestion": "What log file logs everything except auth messages?",
+            "quizAnswer": "syslog"
+        },
+        "authenticationlogging": {
+            "quizQuestion": "What log is used for user authentication?",
+            "quizAnswer": "auth.log"
+        }
+    },
+    "Kernel": {
+        "systemcalls": {
+            "quizQuestion": "What is used to switch from user mode to kernel mode?",
+            "quizAnswer": "system call"
+        },
+        "kernelprivilegelevels": {
+            "quizQuestion": "What ring number has the highest privileges?",
+            "quizAnswer": "0"
+        },
+        "kerneloverview": {
+            "quizQuestion": "What level of the operating system manages devices?",
+            "quizAnswer": "logrotate"
+        },
+        "kernelmodules": {
+            "quizQuestion": "What command is used to unload a module?",
+            "quizAnswer": "modprobe -r"
+        },
+        "kernellocation": {
+            "quizQuestion": "What is the kernel image called in /boot?",
+            "quizAnswer": "vmlinuz"
+        },
+        "kernelinstallation": {
+            "quizQuestion": "How do you see the kernel version of your system?",
+            "quizAnswer": "uname -r"
+        }
+    },
+    "Init": {
+        "upstartoverview": {
+            "quizQuestion": "What is the init implementation that is used by Ubuntu?",
+            "quizAnswer": "upstart"
+        },
+        "upstartjobs": {
+            "quizQuestion": "How would I manually restart an Upstart job called peanuts?",
+            "quizAnswer": "sudo initctl restart peanuts"
+        },
+        "sysvservices": {
+            "quizQuestion": "What is the command to stop a service named peanut with Sys V?",
+            "quizAnswer": "sudo service peanut stop"
+        },
+        "sysvoverview": {
+            "quizQuestion": "What runlevel is usually used for shutdown?",
+            "quizAnswer": "0"
+        },
+        "systemdoverview": {
+            "quizQuestion": "What unit is used to group together other units?",
+            "quizAnswer": "target"
+        },
+        "systemdgoals": {
+            "quizQuestion": "What is the command to start a service named peanut.service?",
+            "quizAnswer": "sudo systemctl start peanut.service"
+        },
+        "powerstates": {
+            "quizQuestion": "What is the command to poweroff your system in 4 minutes?",
+            "quizAnswer": "sudo shutdown -h +4"
+        }
+    },
+    "GettingStarted": {
+        "ubuntu": {
+            "quizQuestion": "What operating system is Ubuntu based off of?",
+            "quizAnswer": "Debian"
+        },
+        "redhatenterpriselinux": {
+            "quizQuestion": "What package manager does RHEL use?",
+            "quizAnswer": "RPM"
+        },
+        "openSUSE": {
+            "quizQuestion": "What is the name of openSUSE's Administration/Installation Tool?",
+            "quizAnswer": "yast"
+        },
+        "linuxmint": {
+            "quizQuestion": "What is Linux Mint based off of?",
+            "quizAnswer": "Ubuntu"
+        },
+        "linuxhistory": {
+            "quizQuestion": "Who developed the Linux kernel?",
+            "quizAnswer": "Linus Torvalds"
+        },
+        "gentoo": {
+            "quizQuestion": "What package management system does Gentoo use?",
+            "quizAnswer": "Portage"
+        },
+        "fedora": {
+            "quizQuestion": "What is RHEL branched off of?",
+            "quizAnswer": "Fedora"
+        },
+        "debian": {
+            "quizQuestion": "What kind of release does Testing and Unstable have?",
+            "quizAnswer": "Rolling"
+        },
+        "archlinux": {
+            "quizQuestion": "What package manager does Arch Linux use?",
+            "quizAnswer": "Pacman"
+        }
+    },
+    "Dns": {
+        "whatisdns": {
+            "quizQuestion": "True or false, DNS helps us find MAC addresses for hostnames?",
+            "quizAnswer": "false"
+        },
+        "etchosts": {
+            "quizQuestion": "What file is used to map hostnames to IP addresses on our machines?",
+            "quizAnswer": "/etc/hosts"
+        },
+        "dnstools": {
+            "quizQuestion": "What tool is used to get detailed information about DNS name servers?",
+            "quizAnswer": "dig"
+        },
+        "dnssetup": {
+            "quizQuestion": "What is the de facto DNS server for Linux?",
+            "quizAnswer": "BIND"
+        },
+        "dnsprocess": {
+            "quizQuestion": "What is the abbreviation for the nameservers where .com, .net, .org, etc addresses are found?",
+            "quizAnswer": "TLD"
+        },
+        "dnscomponents": {
+            "quizQuestion": "What resource record type is used for mail exchangers?",
+            "quizAnswer": "MX"
+        }
+    },
+    "Devices": {
+        "udev": {
+            "quizQuestion": "What dynamically adds and removes devices?",
+            "quizAnswer": "udev"
+        },
+        "sysfs": {
+            "quizQuestion": "What directory is used to view detailed information on devices?",
+            "quizAnswer": "/sys"
+        },
+        "listingdevices": {
+            "quizQuestion": "What command can be used to view usb devices?",
+            "quizAnswer": "lsusb"
+        },
+        "devicetypes": {
+            "quizQuestion": "What is the symbol for character devices in the ls -l command?",
+            "quizAnswer": "c"
+        },
+        "devicenames": {
+            "quizQuestion": "What would commonly be the device name for the first partition on the second SCSI disk?",
+            "quizAnswer": "sdb1"
+        },
+        "devdirectory": {
+            "quizQuestion": "Where are device files stored on the system?",
+            "quizAnswer": "/dev"
+        },
+        "ddcommand": {
+            "quizQuestion": "What is the dd option for block size?",
+            "quizAnswer": "bs"
+        }
+    },
+    "CommandLine": {
+        "whatiscommand": {
+            "quizQuestion": "What command can you use to see a small description of a command?",
+            "quizAnswer": "whatis"
+        },
+        "touchcommand": {
+            "quizQuestion": "How do you create a file called myfile?",
+            "quizAnswer": "touch myfile"
+        },
+        "theshell": {
+            "quizQuestion": "What should be outputted to the display when you type echo Hello World?",
+            "quizAnswer": "Hello World"
+        },
+        "printworkingdirectorypwdcommand": {
+            "quizQuestion": "How do I find what directory you are currently in?",
+            "quizAnswer": "pwd"
+        },
+        "movemvcommand": {
+            "quizQuestion": "How do you rename a file called cat to dog?",
+            "quizAnswer": "mv cat dog"
+        },
+        "mancommand": {
+            "quizQuestion": "How do you see the manuals for a command?",
+            "quizAnswer": "man"
+        },
+        "makedirectorymkdircommand": {
+            "quizQuestion": "What command is use to make a directory?",
+            "quizAnswer": "mkdir"
+        },
+        "listdirectorieslscommand": {
+            "quizQuestion": "What command would you use to see hidden files?",
+            "quizAnswer": "ls -a"
+        },
+        "lesscommand": {
+            "quizQuestion": "How do you quit out of a less command?",
+            "quizAnswer": "q"
+        },
+        "historycommand": {
+            "quizQuestion": "What is the command to clear the terminal?",
+            "quizAnswer": "clear"
+        },
+        "helpcommand": {
+            "quizQuestion": "How do you get quick command line help for built-in bash commands?",
+            "quizAnswer": "help"
+        },
+        "findcommand": {
+            "quizQuestion": "What option should I specify for find if I want to search by name?",
+            "quizAnswer": "-name"
+        },
+        "filecommand": {
+            "quizQuestion": "What command can you use to find the file type of a file?",
+            "quizAnswer": "file"
+        },
+        "exitcommand": {
+            "quizQuestion": "How can you exit from the shell?",
+            "quizAnswer": "exit"
+        },
+        "copycpcommand": {
+            "quizQuestion": "What flag do you need to specify to copy over a directory?",
+            "quizAnswer": "-r"
+        },
+        "changedirectorycdcommand": {
+            "quizQuestion": "If you are in /home/pete/Pictures and wanted to go to /home/pete, what\u2019s a good shortcut to use?",
+            "quizAnswer": "cd .."
+        },
+        "catcommand": {
+            "quizQuestion": "What's a good way to see the contents of a file?",
+            "quizAnswer": "cat"
+        },
+        "aliascommand": {
+            "quizQuestion": "What command is used to make an alias?",
+            "quizAnswer": "alias"
+        }
+    },
+    "BootTheSystem": {
+        "bootprocessoverview": {
+            "quizQuestion": "What is the last stage in the Linux boot process?",
+            "quizAnswer": "init"
+        },
+        "bootprocesskernel": {
+            "quizQuestion": "What is used in modern systems to load up a temporary root filesystem?",
+            "quizAnswer": "Initramfs"
+        },
+        "bootprocessinit": {
+            "quizQuestion": "What is the newest standard for init?",
+            "quizAnswer": "Systemd"
+        },
+        "bootprocessbootloader": {
+            "quizQuestion": "What kernel parameter makes it so you don't see bootup messages?",
+            "quizAnswer": "quiet"
+        },
+        "bootprocessbios": {
+            "quizQuestion": "What does the BIOS load?",
+            "quizAnswer": "bootloader"
+        }
+    },
+    "AdvancedTextFu": {
+        "vimsearchpatterns": {
+            "quizQuestion": "What key is used to search in vim?",
+            "quizAnswer": "/"
+        },
+        "vimsavingandexiting": {
+            "quizQuestion": "How do you quit out of vim without saving?",
+            "quizAnswer": ":q!"
+        },
+        "vimnavigation": {
+            "quizQuestion": "What letter is used to move down?",
+            "quizAnswer": "j"
+        },
+        "viminsertingappendingtext": {
+            "quizQuestion": "What key is use to insert text before the cursor?",
+            "quizAnswer": "i"
+        },
+        "vimediting": {
+            "quizQuestion": "What character is used to delete an entire line?",
+            "quizAnswer": "dd"
+        },
+        "regularexpressionsregex": {
+            "quizQuestion": "What regular expression would you use to match a single character?",
+            "quizAnswer": "."
+        },
+        "emacsmanipulatefiles": {
+            "quizQuestion": "What command is used to open a file?",
+            "quizAnswer": "C-x C-f"
+        },
+        "emacsexitingandhelp": {
+            "quizQuestion": "How do you access the help menu?",
+            "quizAnswer": "C-h C-h"
+        },
+        "emacsediting": {
+            "quizQuestion": "How do you move to the end of the buffer?",
+            "quizAnswer": "M->"
+        },
+        "emacsbuffernavigation": {
+            "quizQuestion": "How do you kill a buffer?",
+            "quizAnswer": "C-x k"
+        }
+    }
+}
