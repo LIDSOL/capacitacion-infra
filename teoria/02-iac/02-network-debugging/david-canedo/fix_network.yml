@@ -1,0 +1,33 @@
+---
+- name: Deploy watchdog to restore connectivity
+  hosts: myhosts
+  become: yes
+
+  tasks:
+    - name: Copiar script watchdog
+      copy:
+        src: files/network-watchdog.sh
+        dest: /usr/local/bin/network-watchdog.sh
+        mode: '0755'
+
+    - name: Copiar service watchdog
+      copy:
+        src: files/network-watchdog.service
+        dest: /etc/systemd/system/network-watchdog.service
+        mode: '0644'
+
+    - name: Copiar timer watchdog
+      copy:
+        src: files/network-watchdog.timer
+        dest: /etc/systemd/system/network-watchdog.timer
+        mode: '0644'
+
+    - name: Recargar systemd
+      command: systemctl daemon-reload
+
+    - name: Habilitar y arrancar watchdog timer
+      systemd:
+        name: network-watchdog.timer
+        enabled: yes
+        state: started
+

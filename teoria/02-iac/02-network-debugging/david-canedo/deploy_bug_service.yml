@@ -1,0 +1,35 @@
+---
+- name: Desplegar e iniciar el servicio bug en todas las VMs
+  hosts: myhosts
+  become: yes
+  tasks:
+    - name: Copiar bug.service al sistema
+      copy:
+        src: bug.service
+        dest: /etc/systemd/system/bug.service
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Recargar daemon de systemd
+      systemd:
+        daemon_reload: yes
+
+    - name: Habilitar bug.service (para que inicie al boot)
+      systemd:
+        name: bug.service
+        enabled: yes
+
+    - name: Iniciar bug.service
+      systemd:
+        name: bug.service
+        state: started
+
+    - name: Verificar estado del servicio
+      systemd:
+        name: bug.service
+      register: service_status
+
+    - name: Mostrar estado del servicio bug
+      debug:
+        var: service_status

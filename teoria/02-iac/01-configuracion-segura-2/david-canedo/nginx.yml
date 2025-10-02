@@ -1,0 +1,21 @@
+- name: Nginx
+  hosts: myhosts
+  become: yes
+
+  tasks:
+    - name: Instalar nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: iniciar el servicio
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+    - name: Usando Jinja2
+      template: 
+        src: index.nginx-debian.html.j2
+        dest: /var/www/html/index.nginx-debian.html
+

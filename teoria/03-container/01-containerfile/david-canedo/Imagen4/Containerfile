@@ -1,0 +1,10 @@
+# Etapa de construcción
+FROM docker.io/golang:1.21-alpine AS builder
+WORKDIR /app
+COPY hola.go .
+RUN go build -ldflags="-s -w" -o hola hola.go
+
+# Etapa final
+FROM scratch
+COPY --from=builder /app/hola /hola
+CMD ["/hola"]
