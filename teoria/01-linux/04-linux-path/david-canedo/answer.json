@@ -174,7 +174,7 @@
         },
         "routingprotocols": {
             "quizQuestion": "What is the term used when all routing tables know the network topology?",
-            "quizAnswer": "Convergence"
+            "quizAnswer": "convergence"
         },
         "pathofapacket": {
             "quizQuestion": "How do we find the MAC address of an IP address?",
@@ -358,7 +358,7 @@
         },
         "samba": {
             "quizQuestion": "What is the latest protocol used for file transfer between Windows and Linux?",
-            "quizAnswer": "cifs"
+            "quizAnswer": "CIFS"
         },
         "rsync": {
             "quizQuestion": "What command would be useful for data backups?",
@@ -402,7 +402,7 @@
         },
         "tcpipmodel": {
             "quizQuestion": "What is the top layer of the TCP/IP model?",
-            "quizAnswer": "application"
+            "quizAnswer": "Application"
         },
         "osimodel": {
             "quizQuestion": "What is used as the theoretical model of networking?",
@@ -430,7 +430,7 @@
         },
         "applicationlayer": {
             "quizQuestion": "What layer is used to present the packet data in a user friendly format?",
-            "quizAnswer": "application"
+            "quizAnswer": "Application"
         }
     },
     "Logging": {
@@ -444,7 +444,7 @@
         },
         "managinglogfiles": {
             "quizQuestion": "What utility is used to manage logs?",
-            "quizAnswer": "logratate"
+            "quizAnswer": "logrotate"
         },
         "kernellogging": {
             "quizQuestion": "What command can be used to view kernel bootup messages?",
@@ -470,7 +470,7 @@
         },
         "kerneloverview": {
             "quizQuestion": "What level of the operating system manages devices?",
-            "quizAnswer": "logrotate"
+            "quizAnswer": "kernel"
         },
         "kernelmodules": {
             "quizQuestion": "What command is used to unload a module?",
@@ -518,7 +518,7 @@
     "GettingStarted": {
         "ubuntu": {
             "quizQuestion": "What operating system is Ubuntu based off of?",
-            "quizAnswer": "Debian"
+            "quizAnswer": "debian"
         },
         "redhatenterpriselinux": {
             "quizQuestion": "What package manager does RHEL use?",
@@ -526,11 +526,11 @@
         },
         "openSUSE": {
             "quizQuestion": "What is the name of openSUSE's Administration/Installation Tool?",
-            "quizAnswer": "yast"
+            "quizAnswer": "YaST"
         },
         "linuxmint": {
             "quizQuestion": "What is Linux Mint based off of?",
-            "quizAnswer": "Ubuntu"
+            "quizAnswer": "ubuntu"
         },
         "linuxhistory": {
             "quizQuestion": "Who developed the Linux kernel?",
@@ -538,19 +538,19 @@
         },
         "gentoo": {
             "quizQuestion": "What package management system does Gentoo use?",
-            "quizAnswer": "Portage"
+            "quizAnswer": "portage"
         },
         "fedora": {
             "quizQuestion": "What is RHEL branched off of?",
-            "quizAnswer": "Fedora"
+            "quizAnswer": "fedora"
         },
         "debian": {
             "quizQuestion": "What kind of release does Testing and Unstable have?",
-            "quizAnswer": "Rolling"
+            "quizAnswer": "rolling"
         },
         "archlinux": {
             "quizQuestion": "What package manager does Arch Linux use?",
-            "quizAnswer": "Pacman"
+            "quizAnswer": "pacman"
         }
     },
     "Dns": {
@@ -568,7 +568,7 @@
         },
         "dnssetup": {
             "quizQuestion": "What is the de facto DNS server for Linux?",
-            "quizAnswer": "BIND"
+            "quizAnswer": "bind"
         },
         "dnsprocess": {
             "quizQuestion": "What is the abbreviation for the nameservers where .com, .net, .org, etc addresses are found?",
@@ -620,7 +620,7 @@
         },
         "theshell": {
             "quizQuestion": "What should be outputted to the display when you type echo Hello World?",
-            "quizAnswer": "Hello World"
+            "quizAnswer": "hello world"
         },
         "printworkingdirectorypwdcommand": {
             "quizQuestion": "How do I find what directory you are currently in?",
@@ -671,7 +671,7 @@
             "quizAnswer": "-r"
         },
         "changedirectorycdcommand": {
-            "quizQuestion": "If you are in /home/pete/Pictures and wanted to go to /home/pete, what\u2019s a good shortcut to use?",
+            "quizQuestion": "If you are in /home/pete/Pictures and wanted to go to /home/pete, what’s a good shortcut to use?",
             "quizAnswer": "cd .."
         },
         "catcommand": {
@@ -690,11 +690,11 @@
         },
         "bootprocesskernel": {
             "quizQuestion": "What is used in modern systems to load up a temporary root filesystem?",
-            "quizAnswer": "Initramfs"
+            "quizAnswer": "initramfs"
         },
         "bootprocessinit": {
             "quizQuestion": "What is the newest standard for init?",
-            "quizAnswer": "Systemd"
+            "quizAnswer": "systemd"
         },
         "bootprocessbootloader": {
             "quizQuestion": "What kernel parameter makes it so you don't see bootup messages?",
@@ -748,3 +748,5 @@
         }
     }
 }
+
+
