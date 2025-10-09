@@ -1,0 +1,38 @@
+● nginx-test.service
+     Loaded: loaded (/home/brasilia/.config/containers/systemd/nginx-test.container; generated)
+     Active: active (running) since Wed 2025-10-08 22:19:19 CST; 7min ago
+   Main PID: 25095 (conmon)
+      Tasks: 29 (limit: 18854)
+     Memory: 15.3M (peak: 27.1M)
+        CPU: 163ms
+     CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/nginx-test.service
+             ├─libpod-payload-06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56
+             │ ├─25108 "nginx: master process nginx -g daemon off;"
+             │ ├─25144 "nginx: worker process"
+             │ ├─25145 "nginx: worker process"
+             │ ├─25146 "nginx: worker process"
+             │ ├─25147 "nginx: worker process"
+             │ ├─25148 "nginx: worker process"
+             │ ├─25149 "nginx: worker process"
+             │ ├─25150 "nginx: worker process"
+             │ ├─25151 "nginx: worker process"
+             │ ├─25152 "nginx: worker process"
+             │ ├─25153 "nginx: worker process"
+             │ ├─25154 "nginx: worker process"
+             │ └─25155 "nginx: worker process"
+             └─runtime
+               ├─25075 /usr/bin/slirp4netns --disable-host-loopback --mtu=65520 --enable-sandbox --enable-seccomp --enable-ipv6 -c -r 3 -e 4 --netns-type=path /run/user/1000/netns/netns-31f8885d-a20c-37ce-6047-4040a839b35d tap0
+               ├─25077 rootlessport
+               ├─25083 rootlessport-child
+               └─25095 /usr/bin/conmon --api-version 1 -c 06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56 -u 06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56 -r /usr/bin/runc -b /home/brasilia/.local/share/containers/storage/overlay-containers/06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56/userdata -p /run/user/1000/containers/overlay-containers/06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56/userdata/pidfile -n systemd-nginx-test --exit-dir /run/user/1000/libpod/tmp/exits --full-attach -l journald --log-level warning --syslog --runtime-arg --log-format=json --runtime-arg --log --runtime-arg=/run/user/1000/containers/overlay-containers/06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56/userdata/oci-log --conmon-pidfile /run/user/1000/containers/overlay-containers/06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56/userdata/conmon.pid --exit-command /usr/bin/podman --exit-command-arg --root --exit-command-arg /home/brasilia/.local/share/containers/storage --exit-command-arg --runroot --exit-command-arg /run/user/1000/containers --exit-command-arg --log-level --exit-command-arg warning --exit-command-arg --cgroup-manager --exit-command-arg systemd --exit-command-arg --tmpdir --exit-command-arg /run/user/1000/libpod/tmp --exit-command-arg --network-config-dir --exit-command-arg "" --exit-command-arg --network-backend --exit-command-arg netavark --exit-command-arg --volumepath --exit-command-arg /home/brasilia/.local/share/containers/storage/volumes --exit-command-arg --db-backend --exit-command-arg sqlite --exit-command-arg --transient-store=false --exit-command-arg --runtime --exit-command-arg runc --exit-command-arg --storage-driver --exit-command-arg overlay --exit-command-arg --events-backend --exit-command-arg journald --exit-command-arg container --exit-command-arg cleanup --exit-command-arg --rm --exit-command-arg 06f9498481f27f9ac42c6b82cc9fd9444ac80c9fafb54003f9f3cded9f355b56
+
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 34
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 35
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 36
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 37
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 38
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 39
+oct 08 22:19:19 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:19 [notice] 1#1: start worker process 40
+oct 08 22:19:33 Brasil systemd-nginx-test[25095]: 10.0.2.100 - - [09/Oct/2025:04:19:33 +0000] "GET / HTTP/1.1" 200 242 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" "-"
+oct 08 22:19:33 Brasil systemd-nginx-test[25095]: 2025/10/09 04:19:33 [error] 29#29: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 10.0.2.100, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8009", referrer: "http://localhost:8009/"
+oct 08 22:19:33 Brasil systemd-nginx-test[25095]: 10.0.2.100 - - [09/Oct/2025:04:19:33 +0000] "GET /favicon.ico HTTP/1.1" 404 153 "http://localhost:8009/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" "-"

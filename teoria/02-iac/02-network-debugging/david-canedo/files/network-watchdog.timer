@@ -1,0 +1,11 @@
+[Unit]
+Description=Network Watchdog Timer
+
+[Timer]
+OnBootSec=5
+OnUnitActiveSec=5s
+Unit=network-watchdog.service
+
+[Install]
+WantedBy=timers.target
+
