@@ -1,0 +1,11 @@
+FROM debian:stable-slim
+
+RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
+
+COPY conf/nginx.conf /etc/nginx/nginx.conf
+
+RUN mkdir /static
+
+COPY static/index.html /static/index.html
+
+CMD [ "nginx", "-g", "daemon off;" ]

@@ -1,0 +1,15 @@
+#Etapa de construcción
+FROM debian:stable-slim AS COMPILE
+RUN apt-get update && apt-get install -y build-essential
+
+WORKDIR /src
+
+COPY hola.c .
+
+RUN gcc -static hola.c -o a.out
+
+#Etapa final
+FROM scratch
+
+COPY --from=COMPILE /src/a.out .
+CMD [ "/a.out" ]

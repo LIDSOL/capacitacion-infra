@@ -1,0 +1,8 @@
+FROM debian:stable-slim
+
+RUN apt-get update && apt-get upgrade -y && apt-get install -y nginx
+
+
+VOLUME [ "/etc/nginx/sites-enabled","/var/www/html" ]
+
+CMD [ "nginx", "-g", "daemon off;" ]
