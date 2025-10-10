@@ -1,0 +1,90 @@
+apiVersion: v1
+#Field for define the object
+kind: Service
+#Field for describing the metada, in this case the name of the object
+metadata:
+  name: wordpress
+spec:
+  type: NodePort
+#The selector field defines which kind of pods we are going to use
+  selector:
+    app: wordpress
+    tier: frontend
+#Define the port to access the service
+  ports:
+    - protocol: TCP
+      port: 80
+---
+apiVersion: v1
+#Define an object type PersistentVolumenClaim, for requesting storage
+kind: PersistentVolumeClaim
+metadata:
+  name: wp-pv-claim
+spec:
+#All the pods of a single node can read and write on the volume
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+#Size of the requested storage
+      storage: 1Gi
+---
+apiVersion: apps/v1
+# Define an object type Deployment, ensuring a certain number of pods
+# running an app designed to manage stateless applications
+kind: Deployment
+metadata:
+#Name of the object
+  name: wordpress
+# Field for specifying the state goal of the object, so that the cluster
+# takes necessary actions to reach the state
+spec:
+# The selector field defines which kind of pods we are going to use
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: frontend
+# In case the desired number of pods is not met, the Deployment can create new pods
+# and uses the template to specify which attributes the pods will have
+# In this case, the template create pods for wordpress app
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: frontend
+    spec:
+# As the name says, the field defines aspects of the containers like the images
+# it uses the wordpress image
+      containers:
+      - image: wordpress:latest
+        name: wordpress
+        env:
+#Environment variables
+        - name: WORDPRESS_DB_HOST
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+# Reading the stored information in the secret previously defined
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        - name: WORDPRESS_DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: username
+        - name: WORDPRESS_DB_NAME
+          value: wordpress
+        ports:
+# Defining the mapping ports 80
+        - containerPort: 80
+          name: wordpress
+# Defining the mounting directories for the volumes
+        volumeMounts:
+        - name: wordpress-persistent-storage
+          mountPath: /var/www/html
+      volumes:
+      - name: wordpress-persistent-storage
+        persistentVolumeClaim:
+# Using the persistent volume claim previously defined
+          claimName: wp-pv-claim
