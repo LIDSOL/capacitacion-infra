@@ -1,0 +1,46 @@
+- name: Firewall
+  hosts: myhosts
+  become: yes
+
+  vars:
+    nftables_rules: |
+      table inet filter {
+         chain input {
+         type filter hook input priority filter; policy drop;
+         iif "lo" accept
+         ct state established,related accept
+         tcp dport 22 accept
+         icmp type echo-request accept
+         tcp dport 80 accept
+         tcp dport 443 accept
+        }
+       chain forward {
+          type filter hook forward priority filter; policy accept;
+          }
+       chain output {
+          type filter hook output priority filter; policy accept;
+          }
+          }
+
+  tasks:
+    - name: Instalar nftables
+      apt:
+        name: nftables
+        state: present
+        update_cache: yes
+
+    - name: iniciar el servicio
+      ansible.builtin.service:
+        name: nftables
+        state: restarted
+        enabled: true
+
+    - name: Reglas
+      copy:
+        dest: /etc/nftables.conf
+        content: "{{ nftables_rules }}"
+
+    - name: reiniciar
+      ansible.builtin.service:
+        name: nftables
+        state: restarted

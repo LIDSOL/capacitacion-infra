@@ -1,0 +1,19 @@
+- name: Common
+  hosts: myhosts
+  become: yes
+  tasks:
+   - name: Instalar unattended-upgrades
+     apt:
+        name: unattended-upgrades
+        state: present
+        update_cache: yes
+   - name: Habilitar periodicidad
+     copy:
+       dest: /etc/apt/apt.conf.d/20auto-upgrades
+       content: |
+          APT::Periodic::Update-Package-Lists "1";
+          APT::Periodic::Download-Upgradeable-Packages "1";
+          APT::Periodic::AutocleanInterval "7";
+          APT::Periodic::Unattended-Upgrade "1";
+
+

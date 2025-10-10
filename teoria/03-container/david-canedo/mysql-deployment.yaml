@@ -1,0 +1,68 @@
+apiVersion: v1          # versión de la api
+kind: Service           # servicio
+metadata:
+  name: wordpress-mysql # nombre del servicio
+spec:
+  selector:             # selecciona los pods a conectar
+    app: wordpress
+    tier: mysql
+  ports:
+    - port: 3306        # puerto expuesto para mysql
+---
+apiVersion: v1          # versión de la api
+kind: PersistentVolumeClaim # reclamo de almacenamiento
+metadata:
+  name: mysql-pv-claim  # nombre del pvc
+spec:
+  accessModes:
+    - ReadWriteOnce     # solo un nodo puede escribir
+  resources:
+    requests:
+      storage: 1Gi      # tamaño solicitado
+---
+apiVersion: apps/v1     # versión de la api para deployments
+kind: Deployment        # deployment de pods
+metadata:
+  name: wordpress-mysql # nombre del deployment
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: mysql
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: mysql
+    spec:
+      containers:
+      - image: mariadb:10.6               # imagen de base de datos
+        name: mysql                       # nombre del contenedor
+        env:
+        - name: MYSQL_DATABASE
+          value: wordpress                # nombre de la base de datos
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass             # obtiene el usuario del secret
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass             # obtiene la contraseña del secret
+              key: password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass             # contraseña root desde el secret
+              key: password
+        ports:
+        - containerPort: 3306              # puerto del contenedor
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage   # nombre del volumen
+          mountPath: /var/lib/mysql        # ruta donde se monta
+      volumes:
+      - name: mysql-persistent-storage     # define el volumen
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim        # usa el pvc definido arriba

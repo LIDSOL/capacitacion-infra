@@ -1,0 +1,33 @@
+- name: SSHD
+  hosts: myhosts
+  become: yes
+  tasks:
+
+    - name: deshabilitar root
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: 'PermitRootLogin no'
+
+    - name: deshabilitar contraseña
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+
+    - name: habilitar autenticación con llave pública
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^#PubkeyAuthentication'
+        line: 'PubkeyAuthentication yes'
+
+    - name: deshabilitar X11Forwarding
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: '^X11Forwarding'
+        line: 'X11Forwarding no'
+
+    - name: reiniciar sshd
+      service:
+        name: ssh
+        state: restarted
