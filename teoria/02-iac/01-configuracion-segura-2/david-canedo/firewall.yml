@@ -32,7 +32,7 @@
     - name: iniciar el servicio
       ansible.builtin.service:
         name: nftables
-        state: started
+        state: restarted
         enabled: true
 
     - name: Reglas
