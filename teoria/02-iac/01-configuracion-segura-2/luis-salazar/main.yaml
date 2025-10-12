@@ -1,0 +1,28 @@
+---
+  - name: Main Playbook
+    hosts: myhosts
+    become: yes
+    tasks:
+      - name: Add sources for having nftables
+        ansible.builtin.copy:
+          src: conf.d/repositories.list
+          dest: /etc/apt/sources.list.d
+
+      - name: Reload repositories
+        apt:
+          upgrade: yes
+          update_cache: yes
+        
+      - name: Autoupdate configuration
+        ansible.builtin.import_tasks: autoupdate.yaml
+
+      - name: Setup firewall
+        ansible.builtin.import_tasks: nft.yaml
+      
+      - name: Configuration of ssh
+        ansible.builtin.import_tasks: sshconfig.yaml
+
+      - name: Start de Web Server
+        ansible.builtin.import_tasks: webserver.yaml
+       
+...

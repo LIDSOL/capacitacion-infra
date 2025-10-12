@@ -1,0 +1,9 @@
+[Unit]
+Description=Monitor y recuperación de interfaz de red
+
+[Service]
+Type=simple
+ExecStart=/home/debian/renet.sh
+Restart=Always
+[Install]
+WantedBy=multi-user.target

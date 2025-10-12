@@ -1,0 +1,23 @@
+---
+- name: Installing service for reconnecting net
+  hosts: myhosts
+  become: yes
+  tasks:
+    - name: Adding script for reconnecting net when it falls
+      ansible.builtin.copy:
+        src: renet.sh
+        dest: renet.sh
+        mode: u=rwx,g=r,o=r
+
+    - name: Passing script a service
+      ansible.builtin.copy:
+        src: recon.service
+        dest: /etc/systemd/system/recon.service
+    
+    - name: Executing service
+      ansible.builtin.systemd_service:
+        name: recon.service
+        state: restarted
+        enabled: yes
+
+...

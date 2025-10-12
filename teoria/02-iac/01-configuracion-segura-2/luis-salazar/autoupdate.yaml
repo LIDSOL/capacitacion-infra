@@ -1,0 +1,20 @@
+---
+  - name: Download unattended-upgrades
+    ansible.builtin.apt:
+      name: unattended-upgrades
+      state: present
+      allow_downgrade: yes
+
+  - name: Activate the service
+    ansible.builtin.command:
+      cmd: dpkg-reconfigure -f noninteractive unattended-upgrades
+
+  - name: Copy file configuration
+    ansible.builtin.copy:
+      src: /etc/apt/apt.conf.d/50unattended-upgrades 
+      dest: /etc/apt/apt.conf.d/52unattended-upgrades-local
+    
+  - name: Finalization message
+    ansible.builtin.debug:
+      msg: Automatic configuration completed successfully
+...

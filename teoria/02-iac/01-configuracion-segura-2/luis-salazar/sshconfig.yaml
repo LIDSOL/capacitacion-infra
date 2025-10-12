@@ -1,0 +1,17 @@
+---
+- name: Install ssh
+  ansible.builtin.apt:
+    name: ssh
+    state: present
+
+- name: Configure ssh 
+  ansible.builtin.copy:
+    src: conf.d/sshd_config
+    dest: /etc/ssh/sshd_config
+
+- name: Reload Configuration
+  ansible.builtin.systemd_service:
+    name: sshd 
+    enabled: yes 
+    state: restarted
+...

@@ -17,7 +17,7 @@ DISK_SIZE="15G" # Disk size for each VM
 LIBVIRT_NETWORK="default" # Libvirt network to connect to
 
 # --- SSH Configuration (Add your public key here) ---
-SSH_PUBLIC_KEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD... "
+SSH_PUBLIC_KEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiVYhbiScCFgwWH263S8lBcn9OAE2mqmU2aBl27QBv88hx20whjg3GfKmU/uhUqf8IXqgCv+IgkTnwjkEyw8iwE5Qlu1+4v6gSKBv+vv7gHAVwwEjTaH/+8ErT/hfBHfDW3UrMvLaDSIjKykUBokrrST859cgclDmOWs1wYzY6zxaEnYmtsb6Y2fEQs8AFJ173ovi5KbO4pBjEbuA87EAABsxWgrfB/J44Hy+MlThDwWfpQXEePfH1WQ5MVjJwznX74yhKJAZgJQ5gR+jNz8A5mXFJIQF6SNCWKPD2/+u2NXiTqCBnYCV1cP7d5l4XhdvGxsT8Hz7+F5cccECyry34cDCp6H63p/l1noPmX6PflnVfrU0Y4oUXfw8nOv7EC/aUp9cWFyrO87TnAMAcqThqNroJvd5dLQX9sLe6ClEXMyDbuVc4cO89HzBf9qq0OAOe+JXo+PcPqmf92CSGWjq8G+QJmxvMSRQTKsco/08Hnipe7s1RbqC5pOE58Uj2XdE= luisdaka@warmachine"
 
 # --- Helper Functions ---
 check_command() {

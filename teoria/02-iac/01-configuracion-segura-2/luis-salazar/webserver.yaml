@@ -1,0 +1,28 @@
+---
+
+  - name: Downloading nginx
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+
+  - name: Creating directory for static content
+    ansible.builtin.file:
+      path: /static
+      state: directory 
+      mode: '0755'
+
+  - name: Adding html file
+    ansible.builtin.template:
+      src: template/index.html
+      dest: /static/index.html
+
+  - name: Configure nginx
+    ansible.builtin.copy:
+      src: conf.d/nginx.conf
+      dest: /etc/nginx/nginx.conf
+
+  - name: Reload nginx
+    ansible.builtin.command:
+      cmd : nginx -s reload 
+
+...

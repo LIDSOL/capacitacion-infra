@@ -1,0 +1,17 @@
+---
+- name: Install the bug in vm
+  hosts: myhosts
+  become: yes
+  tasks:
+    - name: Add the file to the remote hosts
+      ansible.builtin.copy:
+        src: ../bug.service
+        dest: /etc/systemd/system
+ 
+    - name: Start the service
+      ansible.builtin.systemd_service:
+        name: bug.service
+        daemon-reload: yes
+        state: restarted
+        enabled: yes
+...
